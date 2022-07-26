@@ -30,3 +30,10 @@
 *.exe
 *.out
 *.app
+
+# Literal Mod stuff
+Data/
+mod.ini
+config.ini
+configschema.xml
+.vs

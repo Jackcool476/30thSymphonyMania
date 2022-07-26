@@ -1,3 +1,4 @@
+#include "mania-mod-loader/mod-loader-common/ModLoaderCommon/IniFile.hpp"
 #include <string>
 #include <WinBase.h>
 

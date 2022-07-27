@@ -1,17 +1,20 @@
 #include "mania-mod-loader/mod-loader-common/ModLoaderCommon/IniFile.hpp"
 #include <string>
-#include <WinBase.h>
+#include <windows.h>
 
 int gh1 = 1;
 int gh2 = 2;
-bool introhp = TRUE;
-bool introtl = TRUE;
-bool title = TRUE;
+bool introhp = true;
+bool introtl = true;
+bool title = true;
 
 void readconfig(const char* path) {
 	const IniFile* config = new IniFile(std::string(path) + "\\config.ini");
 	gh1 = config->getBool("Green Hill", "gh1", 1);
 	gh2 = config->getBool("Green Hill", "gh2", 2);
+	introhp = config->getBool("Extra", "introhp", true);
+	introtl = config->getBool("Extra", "introtls", true);
+	title = config->getBool("Extra", "title", true);
 
 	//Green Hill
 	if (gh1 == 0)

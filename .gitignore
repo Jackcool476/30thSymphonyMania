@@ -31,9 +31,5 @@
 *.out
 *.app
 
-# Literal Mod stuff
-Data/
-mod.ini
-config.ini
-configschema.xml
+# stuff i think shouldn't be in here
 .vs

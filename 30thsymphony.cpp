@@ -9,16 +9,18 @@ bool introhp = true;
 bool introtl = true;
 bool title = true;
 
-extern "C" {
-	__declspec(dllexport) void Init(const char* path) {
-		IniFile* config = new IniFile(std::string(path) + "\\config.ini");
+extern "C"
+{
+	__declspec(dllexport) void Init(const char *path)
+	{
+		IniFile *config = new IniFile(std::string(path) + "\\config.ini");
 		gh1 = config->getInt("Green Hill", "gh1", 1);
 		gh2 = config->getInt("Green Hill", "gh2", 2);
 		introhp = config->getBool("Extra", "introhp", true);
 		introtl = config->getBool("Extra", "introtls", true);
 		title = config->getBool("Extra", "title", true);
 
-		//Green Hill
+		// Green Hill
 		if (gh1 == 0)
 		{
 			DeleteFile(L"Data\\Music\\GreenHill1.brstm");
@@ -45,7 +47,7 @@ extern "C" {
 			CopyFile(L"Music\\GreenHill2.brstm", L"Data\\Music\\GreenHillEX.brstm", FALSE);
 		}
 
-		//Extra
+		// Extra
 		if (introhp == false)
 		{
 			DeleteFile(L"Data\\Music\\IntroHP.ogg");
@@ -73,5 +75,5 @@ extern "C" {
 			CopyFile(L"Music\\TitleScreen.ogg", L"Data\\Music\\TitleScreen.ogg", FALSE);
 		}
 	}
-	__declspec(dllexport) ModInfo ManiaModInfo = { ModLoaderVer, GameVer };
+	__declspec(dllexport) ModInfo ManiaModInfo = {ModLoaderVer, GameVer};
 }

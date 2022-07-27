@@ -2,10 +2,8 @@
 
 extern "C"
 {
-	__declspec(dllexport) const HelperFunctions* MML_HelperFunctions = nullptr;
 	__declspec(dllexport) void Init(const char *path)
 	{
-		HelperFunctions HelperFunctionsGlobal{};
 		int gh1 = 1;
 		int gh2 = 2;
 		bool introhp = true;
@@ -22,61 +20,65 @@ extern "C"
 		// Green Hill
 		if (gh1 == 0)
 		{
-			remove(path + *"Data/Music/GreenHill1.brstm");
-			PrintDebug("gh1 deleted");
+			if (remove("Data/Music/GreenHill1.brstm"))
+				PrintDebug("\nFile Deleted Successfully!");
+			else
+				PrintDebug("\nerror");
 		}
 		else if (gh1 == 1)
 		{
-			CopyFile(L"Music\\GreenHill.brstm", L"Data\\Music\\GreenHill1.brstm", FALSE);
-			//if (HelperFunctionsGlobal.CheckFile(path + *"source_filename")) {
-			HelperFunctionsGlobal.AddReplaceFile(path + *"Music/GreenHill.brstm",path + *"Data/Music/GreenHill1.brstm");
-			PrintDebug("gh1 short");
+			if (std::filesystem::copy_file("Music/GreenHill.brstm", "Data/Music/GreenHill1.brstm")) {
+				PrintDebug("\nworks");
+			}
+			else {
+				PrintDebug("\ndoesn't");
+			}
 		}
 		else if (gh1 == 2)
 		{
-			CopyFile(L"Music/GreenHillEX.brstm", L"Data/Music/GreenHill1.brstm", FALSE);
+			std::filesystem::copy_file("Music/GreenHillEX.brstm", "Data/Music/GreenHill1.brstm");
 			PrintDebug("gh1 long");
 		}
 
 		if (gh2 == 0)
 		{
-			DeleteFile(L"Data/Music/GreenHill2.brstm");
+			remove("Data/Music/GreenHill2.brstm");
 		}
 		else if (gh2 == 1)
 		{
-			CopyFile(L"Music/GreenHill.brstm", L"Data/Music/GreenHill2.brstm", FALSE);
+			std::filesystem::copy_file("Music/GreenHill.brstm", "Data/Music/GreenHill2.brstm");
 		}
 		else if (gh2 == 2)
 		{
-			CopyFile(L"Music/GreenHillEX.brstm", L"Data/Music/GreenHill2.brstm", FALSE);
+			std::filesystem::copy_file("Music/GreenHillEX.brstm", "Data/Music/GreenHill2.brstm");
 		}
 
 		// Extra
 		if (introhp == false)
 		{
-			DeleteFile(L"Data/Music/IntroHP.ogg");
+			remove("Data/Music/IntroHP.ogg");
 		}
 		else
 		{
-			CopyFile(L"Music/IntroHP.ogg", L"Data/Music/IntroHP.ogg", FALSE);
+			std::filesystem::copy_file("Music/IntroHP.ogg", "Data/Music/IntroHP.ogg");
 		}
 
 		if (introtl == false)
 		{
-			DeleteFile(L"Data/Music/IntroTee.ogg");
+			remove("Data/Music/IntroTee.ogg");
 		}
 		else
 		{
-			CopyFile(L"Music/IntroTee.ogg", L"Data/Music/IntroTee.ogg", FALSE);
+			std::filesystem::copy_file("Music/IntroTee.ogg", "Data/Music/IntroTee.ogg");
 		}
 
 		if (title == false)
 		{
-			DeleteFile(L"Data/Music/TitleScreen.ogg");
+			remove("Data/Music/TitleScreen.ogg");
 		}
 		else
 		{
-			CopyFile(L"\\Music\\TitleScreen.ogg", L"\\Data\\Music\\TitleScreen.ogg", FALSE);
+			std::filesystem::copy_file("Music/TitleScreen.ogg", "Data/Music/TitleScreen.ogg");
 		}
 	}
 	__declspec(dllexport) ModInfo ManiaModInfo = {ModLoaderVer, GameVer};

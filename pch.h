@@ -12,4 +12,5 @@
 #include "IniFile.hpp"
 #include "mania-mod-loader/ManiaModLoader/include/ManiaModLoader.h"
 #include <string>
+#include <filesystem>
 #endif //PCH_H

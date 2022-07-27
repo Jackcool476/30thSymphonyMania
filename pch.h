@@ -11,6 +11,5 @@
 #include "framework.h"
 #include "mod-loader-common/ModLoaderCommon/IniFile.hpp"
 #include "mania-mod-loader/ManiaModLoader/include/ManiaModLoader.h"
-#include "mania-mod-loader/ManiaModLoader/dllmain.cpp"
 #include <string>
 #endif //PCH_H

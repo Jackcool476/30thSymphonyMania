@@ -13,11 +13,11 @@ extern "C"
 {
 	__declspec(dllexport) void Init(const char *path)
 	{
-		IniFile *config = new IniFile(std::string(path) + "\\config.ini");
+		const IniFile *config = new IniFile(std::string(path) + "\\config.ini");
 		gh1 = config->getInt("Green Hill", "gh1", 1);
 		gh2 = config->getInt("Green Hill", "gh2", 2);
 		introhp = config->getBool("Extra", "introhp", true);
-		introtl = config->getBool("Extra", "introtls", true);
+		introtl = config->getBool("Extra", "introtl", true);
 		title = config->getBool("Extra", "title", true);
 
 		// Green Hill

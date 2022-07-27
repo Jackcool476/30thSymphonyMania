@@ -37,4 +37,4 @@ Release
 bin
 *.exp
 *.pdb
-.lastcodeanalysis
+*.lastcodeanalysis

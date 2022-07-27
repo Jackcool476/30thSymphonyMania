@@ -17,7 +17,7 @@
  * @param cp Code page.
  * @return UTF-16 text (allocated via new[]), or nullptr on error.
  */
-wchar_t* MBStoUTF16(const char* mbs, unsigned int cp)
+wchar_t *MBStoUTF16(const char *mbs, unsigned int cp)
 {
 	int cchWcs = MultiByteToWideChar(cp, 0, mbs, -1, NULL, 0);
 	if (cchWcs <= 0)
@@ -33,7 +33,7 @@ wchar_t* MBStoUTF16(const char* mbs, unsigned int cp)
  * @param cp Code page.
  * @return Multibyte text (allocated via new[]), or nullptr on error.
  */
-char* UTF16toMBS(const wchar_t* wcs, unsigned int cp)
+char *UTF16toMBS(const wchar_t *wcs, unsigned int cp)
 {
 	int cbMbs = WideCharToMultiByte(cp, 0, wcs, -1, NULL, 0, NULL, NULL);
 	if (cbMbs <= 0)
@@ -52,15 +52,15 @@ char* UTF16toMBS(const wchar_t* wcs, unsigned int cp)
  * @param targetcp Code page to convert to.
  * @return Converted text, or empty string on error.
  */
-char* MBStoMBS(const char* source, unsigned int sourcecp, unsigned int targetcp)
+char *MBStoMBS(const char *source, unsigned int sourcecp, unsigned int targetcp)
 {
 	// Convert from the source codepage to UTF-16.
-	wchar_t* wcs = MBStoUTF16(source, sourcecp);
+	wchar_t *wcs = MBStoUTF16(source, sourcecp);
 	if (!wcs)
 		return nullptr;
 
 	// Convert from UTF-16 to the target codepage.
-	char* mbs = UTF16toMBS(wcs, targetcp);
+	char *mbs = UTF16toMBS(wcs, targetcp);
 	delete[] wcs;
 	if (!mbs)
 		return nullptr;
@@ -73,7 +73,7 @@ char* MBStoMBS(const char* source, unsigned int sourcecp, unsigned int targetcp)
  * @param sjis Shift-JIS text, null-terminated.
  * @return UTF-8 text (allocated via new[]), or nullptr on error.
  */
-char* SJIStoUTF8(const char* sjis)
+char *SJIStoUTF8(const char *sjis)
 {
 	return MBStoMBS(sjis, CP_SJIS, CP_UTF8);
 }
@@ -83,7 +83,7 @@ char* SJIStoUTF8(const char* sjis)
  * @param utf8 UTF-8 text, null-terminated.
  * @return Shift-JIS text (allocated via new[]), or nullptr on error.
  */
-char* UTF8toSJIS(const char* utf8)
+char *UTF8toSJIS(const char *utf8)
 {
 	return MBStoMBS(utf8, CP_UTF8, CP_SJIS);
 }
@@ -93,7 +93,7 @@ char* UTF8toSJIS(const char* utf8)
  * @param utf8 UTF-8 text, null-terminated.
  * @return Windows-1252 text (allocated via new[]), or nullptr on error.
  */
-char* UTF8to1252(const char* utf8)
+char *UTF8to1252(const char *utf8)
 {
 	return MBStoMBS(utf8, CP_UTF8, 1252);
 }
@@ -104,7 +104,7 @@ char* UTF8to1252(const char* utf8)
  * @param short target codepage.
  * @return Windows-1252 etc. text (allocated via new[]), or nullptr on error.
  */
-char* UTF8toCodepage(const char* utf8, unsigned int codepage)
+char *UTF8toCodepage(const char *utf8, unsigned int codepage)
 {
 	return MBStoMBS(utf8, CP_UTF8, codepage);
 }
@@ -121,9 +121,9 @@ using std::wstring;
  * @param cp Code page.
  * @return UTF-16 text, or empty string on error.
  */
-wstring MBStoUTF16(const string& mbs, unsigned int cp)
+wstring MBStoUTF16(const string &mbs, unsigned int cp)
 {
-	wchar_t* wcs = MBStoUTF16(mbs.c_str(), cp);
+	wchar_t *wcs = MBStoUTF16(mbs.c_str(), cp);
 	if (!wcs)
 		return wstring();
 
@@ -138,9 +138,9 @@ wstring MBStoUTF16(const string& mbs, unsigned int cp)
  * @param cp Code page.
  * @return Multibyte text, or empty string on error.
  */
-string UTF16toMBS(const wstring& wcs, unsigned int cp)
+string UTF16toMBS(const wstring &wcs, unsigned int cp)
 {
-	char* mbs = UTF16toMBS(wcs.c_str(), cp);
+	char *mbs = UTF16toMBS(wcs.c_str(), cp);
 	if (!mbs)
 		return string();
 
@@ -158,9 +158,9 @@ string UTF16toMBS(const wstring& wcs, unsigned int cp)
  * @param targetcp Code page to convert to.
  * @return Converted text, or empty string on error.
  */
-string MBStoMBS(const string& source, unsigned int sourcecp, unsigned int targetcp)
+string MBStoMBS(const string &source, unsigned int sourcecp, unsigned int targetcp)
 {
-	char* mbs = MBStoMBS(source.c_str(), sourcecp, targetcp);
+	char *mbs = MBStoMBS(source.c_str(), sourcecp, targetcp);
 	if (!mbs)
 		return string();
 
@@ -174,7 +174,7 @@ string MBStoMBS(const string& source, unsigned int sourcecp, unsigned int target
  * @param sjis Shift-JIS text.
  * @return UTF-8 text, or empty string on error.
  */
-string SJIStoUTF8(const string& sjis)
+string SJIStoUTF8(const string &sjis)
 {
 	return MBStoMBS(sjis, CP_SJIS, CP_UTF8);
 }
@@ -184,7 +184,7 @@ string SJIStoUTF8(const string& sjis)
  * @param utf8 UTF-8 text.
  * @return Shift-JIS text, or empty string on error.
  */
-string UTF8toSJIS(const string& utf8)
+string UTF8toSJIS(const string &utf8)
 {
 	return MBStoMBS(utf8, CP_UTF8, CP_SJIS);
 }
@@ -194,7 +194,7 @@ string UTF8toSJIS(const string& utf8)
  * @param utf8 UTF-8 text.
  * @return Windows-1252 text, or empty string on error.
  */
-string UTF8to1252(const string& utf8)
+string UTF8to1252(const string &utf8)
 {
 	return MBStoMBS(utf8, CP_UTF8, 1252);
 }
@@ -205,7 +205,7 @@ string UTF8to1252(const string& utf8)
  * @param short target codepage.
  * @return Windows-1252 etc. text, or empty string on error.
  */
-string UTF8toCodepage(const string& utf8, unsigned int codepage)
+string UTF8toCodepage(const string &utf8, unsigned int codepage)
 {
 	return MBStoMBS(utf8, CP_UTF8, codepage);
 }

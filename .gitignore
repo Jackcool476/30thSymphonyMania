@@ -35,5 +35,6 @@
 .vs
 Release
 bin
-.exp
-.pdb
+*.exp
+*.pdb
+.lastcodeanalysis

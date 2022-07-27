@@ -2,6 +2,7 @@
 
 extern "C"
 {
+	__declspec(dllexport) const HelperFunctions* MML_HelperFunctions = nullptr;
 	__declspec(dllexport) void Init(const char *path)
 	{
 		std::string modpath = "mods/Sonic 30th Symphony Songs/Mods/Sonic 30th Symphony Songs";
@@ -20,40 +21,50 @@ extern "C"
 		title = config->getBool("Extra", "title", true);
 
 		// Green Hill
-		remove("mods/Sonic 30th Symphony Songs/Data/Music/GreenHill1.brstm");
 		if (gh1 == 1)
 		{
-			std::filesystem::copy_file("mods/Sonic 30th Symphony Songs/Music/GreenHill.brstm", "mods/Sonic 30th Symphony Songs/Data/Music/GreenHill1.brstm");
+			MML_HelperFunctions->AddReplaceFile("mods/Sonic 30th Symphony Songs/Music/GreenHill.brstm", "mods/Sonic 30th Symphony Songs/Data/Music/GreenHill1.brstm");
 		}
 		else if (gh1 == 2)
 		{
-			std::filesystem::copy_file("mods/Sonic 30th Symphony Songs/Music/GreenHillEX.brstm", "mods/Sonic 30th Symphony Songs/Data/Music/GreenHill1.brstm");
+			MML_HelperFunctions->AddReplaceFile("mods/Sonic 30th Symphony Songs/Music/GreenHillEX.brstm", "mods/Sonic 30th Symphony Songs/Data/Music/GreenHill1.brstm");
 		}
-		remove("mods/Sonic 30th Symphony Songs/Data/Music/GreenHill2.brstm");
+		else {
+			remove("mods/Sonic 30th Symphony Songs/Data/Music/GreenHill1.brstm");
+		}
 		if (gh2 == 1)
 		{
-			std::filesystem::copy_file("mods/Sonic 30th Symphony Songs/Music/GreenHill.brstm", "mods/Sonic 30th Symphony Songs/Data/Music/GreenHill2.brstm");
+			MML_HelperFunctions->AddReplaceFile("mods/Sonic 30th Symphony Songs/Music/GreenHill.brstm", "mods/Sonic 30th Symphony Songs/Data/Music/GreenHill2.brstm");
 		}
 		else if (gh2 == 2)
 		{
-			std::filesystem::copy_file("mods/Sonic 30th Symphony Songs/Music/GreenHillEX.brstm", "mods/Sonic 30th Symphony Songs/Data/Music/GreenHill2.brstm");
+			MML_HelperFunctions->AddReplaceFile("mods/Sonic 30th Symphony Songs/Music/GreenHillEX.brstm", "mods/Sonic 30th Symphony Songs/Data/Music/GreenHill2.brstm");
+		}
+		else {
+			remove("mods/Sonic 30th Symphony Songs/Data/Music/GreenHill2.brstm");
 		}
 
 		// Extra
-		remove("mods/Sonic 30th Symphony Songs/Data/Music/IntroHP.ogg");
 		if (introhp)
 		{
-			std::filesystem::copy_file("mods/Sonic 30th Symphony Songs/Music/IntroHP.ogg", "mods/Sonic 30th Symphony Songs/Data/Music/IntroHP.ogg");
+			MML_HelperFunctions->AddReplaceFile("mods/Sonic 30th Symphony Songs/Music/IntroHP.ogg", "mods/Sonic 30th Symphony Songs/Data/Music/IntroHP.ogg");
 		}
-		remove("mods/Sonic 30th Symphony Songs/Data/Music/IntroTee.ogg");
+		else {
+			remove("mods/Sonic 30th Symphony Songs/Data/Music/IntroHP.ogg");
+		}
 		if (introtl)
 		{
-			std::filesystem::copy_file("mods/Sonic 30th Symphony Songs/Music/IntroTee.ogg", "mods/Sonic 30th Symphony Songs/Data/Music/IntroTee.ogg");
+			MML_HelperFunctions->AddReplaceFile("mods/Sonic 30th Symphony Songs/Music/IntroTee.ogg", "mods/Sonic 30th Symphony Songs/Data/Music/IntroTee.ogg");
 		}
-		remove("mods/Sonic 30th Symphony Songs/Data/Music/TitleScreen.ogg");
+		else {
+			remove("mods/Sonic 30th Symphony Songs/Data/Music/IntroTee.ogg");
+		}
 		if (title)
 		{
-			std::filesystem::copy_file("mods/Sonic 30th Symphony Songs/Music/TitleScreen.ogg", "mods/Sonic 30th Symphony Songs/Data/Music/TitleScreen.ogg");
+			MML_HelperFunctions->AddReplaceFile("mods/Sonic 30th Symphony Songs/Music/TitleScreen.ogg", "mods/Sonic 30th Symphony Songs/Data/Music/TitleScreen.ogg");
+		}
+		else {
+			remove("mods/Sonic 30th Symphony Songs/Data/Music/TitleScreen.ogg");
 		}
 	}
 	__declspec(dllexport) ModInfo ManiaModInfo = {ModLoaderVer, GameVer};

@@ -5,6 +5,7 @@ extern "C"
 	__declspec(dllexport) const HelperFunctions* MML_HelperFunctions = nullptr;
 	__declspec(dllexport) void Init(const char *path)
 	{
+		HelperFunctions HelperFunctionsGlobal{};
 		int gh1 = 1;
 		int gh2 = 2;
 		bool introhp = true;
@@ -21,15 +22,20 @@ extern "C"
 		// Green Hill
 		if (gh1 == 0)
 		{
-			DeleteFile(L"Data/Music/GreenHill1.brstm");
+			remove(path + *"Data/Music/GreenHill1.brstm");
+			PrintDebug("gh1 deleted");
 		}
 		else if (gh1 == 1)
 		{
-			CopyFile(L"Music/GreenHill.brstm", L"Data/Music/GreenHill1.brstm", FALSE);
+			CopyFile(L"Music\\GreenHill.brstm", L"Data\\Music\\GreenHill1.brstm", FALSE);
+			//if (HelperFunctionsGlobal.CheckFile(path + *"source_filename")) {
+			HelperFunctionsGlobal.AddReplaceFile(path + *"Music/GreenHill.brstm",path + *"Data/Music/GreenHill1.brstm");
+			PrintDebug("gh1 short");
 		}
 		else if (gh1 == 2)
 		{
 			CopyFile(L"Music/GreenHillEX.brstm", L"Data/Music/GreenHill1.brstm", FALSE);
+			PrintDebug("gh1 long");
 		}
 
 		if (gh2 == 0)

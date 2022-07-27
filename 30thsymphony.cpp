@@ -1,24 +1,21 @@
-#include <string>
-#include "stdafx.h"
-#include "mod-loader-common/ModLoaderCommon/IniFile.hpp"
-#include "mania-mod-loader/ManiaModLoader/include/ManiaModLoader.h"
-
-int gh1 = 1;
-int gh2 = 2;
-bool introhp = true;
-bool introtl = true;
-bool title = true;
+#include "pch.h"
 
 extern "C"
 {
 	__declspec(dllexport) void Init(const char *path)
 	{
-		const IniFile *config = new IniFile(std::string(path) + "\\config.ini");
-		gh1 = config->getInt("Green Hill", "gh1", 1);
-		gh2 = config->getInt("Green Hill", "gh2", 2);
-		introhp = config->getBool("Extra", "introhp", true);
-		introtl = config->getBool("Extra", "introtl", true);
-		title = config->getBool("Extra", "title", true);
+		int gh1 = 1;
+		int gh2 = 2;
+		bool introhp = true;
+		bool introtl = true;
+		bool title = true;
+
+		//const IniFile *config = new IniFile(std::string(path) + "\\config.ini");
+		//gh1 = config->getInt("Green Hill", "gh1", 1);
+		//gh2 = config->getInt("Green Hill", "gh2", 2);
+		//introhp = config->getBool("Extra", "introhp", true);
+		//introtl = config->getBool("Extra", "introtl", true);
+		//title = config->getBool("Extra", "title", true);
 
 		// Green Hill
 		if (gh1 == 0)

@@ -11,12 +11,12 @@ extern "C"
 		bool introtl = true;
 		bool title = true;
 
-		//const IniFile *config = new IniFile(std::string(path) + "/config.ini");
-		//gh1 = config->getInt("Green Hill", "gh1", 1);
-		//gh2 = config->getInt("Green Hill", "gh2", 2);
-		//introhp = config->getBool("Extra", "introhp", true);
-		//introtl = config->getBool("Extra", "introtl", true);
-		//title = config->getBool("Extra", "title", true);
+		const IniFile *config = new IniFile(std::string(path) + "/config.ini");
+		gh1 = config->getInt("Green Hill", "gh1", 1);
+		gh2 = config->getInt("Green Hill", "gh2", 2);
+		introhp = config->getBool("Extra", "introhp", true);
+		introtl = config->getBool("Extra", "introtl", true);
+		title = config->getBool("Extra", "title", true);
 
 		// Green Hill
 		if (gh1 == 0)

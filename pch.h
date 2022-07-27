@@ -7,10 +7,11 @@
 #ifndef PCH_H
 #define PCH_H
 
+#define WIN32_LEAN_AND_MEAN
+#include <windows.h>
+
 // add headers that you want to pre-compile here
-#include "framework.h"
 #include "IniFile.hpp"
 #include "mania-mod-loader/ManiaModLoader/include/ManiaModLoader.h"
-#include <string>
 #include <filesystem>
 #endif //PCH_H

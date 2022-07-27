@@ -9,7 +9,7 @@
 
 // add headers that you want to pre-compile here
 #include "framework.h"
-#include "mod-loader-common/ModLoaderCommon/IniFile.hpp"
+#include "IniFile.hpp"
 #include "mania-mod-loader/ManiaModLoader/include/ManiaModLoader.h"
 #include <string>
 #endif //PCH_H

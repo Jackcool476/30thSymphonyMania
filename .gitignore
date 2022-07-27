@@ -34,3 +34,4 @@
 # stuff i think shouldn't be in here
 .vs
 Release
+bin

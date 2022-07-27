@@ -11,9 +11,9 @@ bool title = true;
 
 extern "C"
 {
-	__declspec(dllexport) void Init()
+	__declspec(dllexport) void Init(const char *path)
 	{
-		const IniFile *config = new IniFile("\\config.ini");
+		const IniFile *config = new IniFile(std::string(path) + "\\config.ini");
 		gh1 = config->getInt("Green Hill", "gh1", 1);
 		gh2 = config->getInt("Green Hill", "gh2", 2);
 		introhp = config->getBool("Extra", "introhp", true);

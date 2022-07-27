@@ -23,22 +23,22 @@ extern "C"
 		// Green Hill
 		if (gh1 == 1)
 		{
-			MML_HelperFunctions->AddReplaceFile("mods/Sonic 30th Symphony Songs/Music/GreenHill.brstm", "mods/Sonic 30th Symphony Songs/Data/Music/GreenHill1.brstm");
+			MML_HelperFunctions->AddReplaceFile("mods/Sonic 30th Symphony Songs/Data/Music/GreenHill1.brstm", "mods/Sonic 30th Symphony Songs/Music/GreenHill.brstm");
 		}
 		else if (gh1 == 2)
 		{
-			MML_HelperFunctions->AddReplaceFile("mods/Sonic 30th Symphony Songs/Music/GreenHillEX.brstm", "mods/Sonic 30th Symphony Songs/Data/Music/GreenHill1.brstm");
+			MML_HelperFunctions->AddReplaceFile("mods/Sonic 30th Symphony Songs/Data/Music/GreenHill1.brstm", "mods/Sonic 30th Symphony Songs/Music/GreenHillEX.brstm");
 		}
 		else {
 			remove("mods/Sonic 30th Symphony Songs/Data/Music/GreenHill1.brstm");
 		}
 		if (gh2 == 1)
 		{
-			MML_HelperFunctions->AddReplaceFile("mods/Sonic 30th Symphony Songs/Music/GreenHill.brstm", "mods/Sonic 30th Symphony Songs/Data/Music/GreenHill2.brstm");
+			MML_HelperFunctions->AddReplaceFile("mods/Sonic 30th Symphony Songs/Data/Music/GreenHill2.brstm", "mods/Sonic 30th Symphony Songs/Music/GreenHill.brstm");
 		}
 		else if (gh2 == 2)
 		{
-			MML_HelperFunctions->AddReplaceFile("mods/Sonic 30th Symphony Songs/Music/GreenHillEX.brstm", "mods/Sonic 30th Symphony Songs/Data/Music/GreenHill2.brstm");
+			MML_HelperFunctions->AddReplaceFile("mods/Sonic 30th Symphony Songs/Data/Music/GreenHill2.brstm", "mods/Sonic 30th Symphony Songs/Music/GreenHillEX.brstm");
 		}
 		else {
 			remove("mods/Sonic 30th Symphony Songs/Data/Music/GreenHill2.brstm");
@@ -47,21 +47,21 @@ extern "C"
 		// Extra
 		if (introhp)
 		{
-			MML_HelperFunctions->AddReplaceFile("mods/Sonic 30th Symphony Songs/Music/IntroHP.ogg", "mods/Sonic 30th Symphony Songs/Data/Music/IntroHP.ogg");
+			MML_HelperFunctions->AddReplaceFile("mods/Sonic 30th Symphony Songs/Data/Music/IntroHP.ogg", "mods/Sonic 30th Symphony Songs/Music/IntroHP.ogg");
 		}
 		else {
 			remove("mods/Sonic 30th Symphony Songs/Data/Music/IntroHP.ogg");
 		}
 		if (introtl)
 		{
-			MML_HelperFunctions->AddReplaceFile("mods/Sonic 30th Symphony Songs/Music/IntroTee.ogg", "mods/Sonic 30th Symphony Songs/Data/Music/IntroTee.ogg");
+			MML_HelperFunctions->AddReplaceFile("mods/Sonic 30th Symphony Songs/Data/Music/IntroTee.ogg", "mods/Sonic 30th Symphony Songs/Music/IntroTee.ogg");
 		}
 		else {
 			remove("mods/Sonic 30th Symphony Songs/Data/Music/IntroTee.ogg");
 		}
 		if (title)
 		{
-			MML_HelperFunctions->AddReplaceFile("mods/Sonic 30th Symphony Songs/Music/TitleScreen.ogg", "mods/Sonic 30th Symphony Songs/Data/Music/TitleScreen.ogg");
+			MML_HelperFunctions->AddReplaceFile("mods/Sonic 30th Symphony Songs/Data/Music/TitleScreen.ogg", "mods/Sonic 30th Symphony Songs/Music/TitleScreen.ogg");
 		}
 		else {
 			remove("mods/Sonic 30th Symphony Songs/Data/Music/TitleScreen.ogg");

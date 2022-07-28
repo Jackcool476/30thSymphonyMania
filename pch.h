@@ -13,5 +13,5 @@
 // add headers that you want to pre-compile here
 #include <filesystem>
 #include "IniFile.hpp"
-#include "mania-mod-loader/ManiaModLoader/include/ManiaModLoader.h"
+#include "ManiaModLoader.h"
 #endif // PCH_H

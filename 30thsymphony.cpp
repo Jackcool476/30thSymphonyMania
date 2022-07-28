@@ -1,57 +1,51 @@
 #include "pch.h"
+using namespace std;
+using namespace filesystem;
 
 extern "C"
 {
 	__declspec(dllexport) void Init(const char* path, const HelperFunctions & helperFunctions)
 	{
-		int gh1 = 1;
-		int gh2 = 2;
-		bool introhp = true;
-		bool introtl = true;
-		bool title = true;
-
-		const IniFile *config = new IniFile(std::string(path) + "/config.ini");
-		gh1 = config->getInt("Green Hill", "gh1", 1);
-		gh2 = config->getInt("Green Hill", "gh2", 2);
-		introhp = config->getBool("Extra", "introhp", true);
-		introtl = config->getBool("Extra", "introtl", true);
-		title = config->getBool("Extra", "title", true);
+		const IniFile *config = new IniFile(string(path) + "/config.ini");
 
 		// Green Hill
-		remove((std::string(path) + "Data/Music/GreenHill1.brstm").c_str());
-		if (gh1 == 1)
+		remove((string(path) + "/Data/Music/GreenHill1.brstm").c_str());
+		if (config->getInt("Green Hill", "gh1", 1) == 1)
 		{
-			std::filesystem::copy_file(std::string(path) + "Music/GreenHill.brstm", std::string(path) + "Data/Music/GreenHill1.brstm");
+			copy_file(string(path) + "/Music/GreenHill.brstm", string(path) + "/Data/Music/GreenHill1.brstm");
 		}
-		else if (gh1 == 2)
+		else if (config->getInt("Green Hill", "gh1", 1) == 2)
 		{
-			std::filesystem::copy_file(std::string(path) + "Music/GreenHillEX.brstm", std::string(path) + "Data/Music/GreenHill1.brstm");
-		}
-		remove((std::string(path) + "Data/Music/GreenHill2.brstm").c_str());
-		if (gh2 == 1)
-		{
-			std::filesystem::copy_file(std::string(path) + "Music/GreenHill.brstm", std::string(path) + "Data/Music/GreenHill2.brstm");
-		}
-		else if (gh2 == 2)
-		{
-			std::filesystem::copy_file(std::string(path) + "Music/GreenHillEX.brstm", std::string(path) + "Data/Music/GreenHill2.brstm");
+			copy_file(string(path) + "/Music/GreenHillEX.brstm", string(path) + "/Data/Music/GreenHill1.brstm");
 		}
 
-		// Extra
-		remove((std::string(path) + "Data/Music/IntroHP.ogg").c_str());
-		if (introhp)
+		remove((string(path) + "/Data/Music/GreenHill2.brstm").c_str());
+		if (config->getInt("Green Hill", "gh2", 2) == 1)
 		{
-			std::filesystem::copy_file(std::string(path) + "Music/IntroHP.ogg", std::string(path) + "Data/Music/IntroHP.ogg");
+			copy_file(string(path) + "/Music/GreenHill.brstm", string(path) + "/Data/Music/GreenHill2.brstm");
 		}
-		remove((std::string(path) + "Data/Music/IntroTee.ogg").c_str());
-		if (introtl)
+		else if (config->getInt("Green Hill", "gh2", 2) == 2)
 		{
-			std::filesystem::copy_file(std::string(path) + "Music/IntroTee.ogg", std::string(path) + "Data/Music/IntroTee.ogg");
+			copy_file(string(path) + "/Music/GreenHillEX.brstm", string(path) + "/Data/Music/GreenHill2.brstm");
 		}
-		remove((std::string(path) + "Data/Music/TitleScreen.ogg").c_str());
-		if (title)
+
+		// Extra Songs
+		remove((string(path) + "/Data/Music/IntroHP.ogg").c_str());
+		if (config->getBool("Extra", "introhp", true))
 		{
-			std::filesystem::copy_file(std::string(path) + "Music/TitleScreen.ogg", std::string(path) + "Data/Music/TitleScreen.ogg");
+			copy_file(string(path) + "/Music/IntroHP.ogg", string(path) + "/Data/Music/IntroHP.ogg");
+		}
+
+		remove((string(path) + "/Data/Music/IntroTee.ogg").c_str());
+		if (config->getBool("Extra", "introtl", true))
+		{
+			copy_file(string(path) + "/Music/IntroTee.ogg", string(path) + "/Data/Music/IntroTee.ogg");
+		}
+
+		remove((string(path) + "/Data/Music/TitleScreen.ogg").c_str());
+		if (config->getBool("Extra", "title", true))
+		{
+			copy_file(string(path) + "/Music/TitleScreen.ogg", string(path) + "/Data/Music/TitleScreen.ogg");
 		}
 	}
 	__declspec(dllexport) ModInfo ManiaModInfo = {ModLoaderVer, GameVer};

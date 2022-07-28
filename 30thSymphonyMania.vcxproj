@@ -76,7 +76,7 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LibraryPath>$(VC_LibraryPath_x86);$(WindowsSDK_LibraryPath_x86);bin\</LibraryPath>
-    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);mod-loader-common\ModLoaderCommon</IncludePath>
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);mod-loader-common\ModLoaderCommon;mania-mod-loader/ManiaModLoader/include/</IncludePath>
     <OutDir>$(SolutionDir)\</OutDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -147,10 +147,7 @@
     <ClCompile Include="TextConv.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="IniFile.hpp" />
     <ClInclude Include="pch.h" />
-    <ClInclude Include="TextConv.hpp" />
-    <ClInclude Include="Utils.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

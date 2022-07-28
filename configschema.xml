@@ -54,6 +54,7 @@
       <EnumMember name="2" display="Extended Intro" />
       <EnumMember name="3" display="Angel Island" />
       <EnumMember name="4" display="Bonus" />
+      <EnumMember name="5" display="Bonus 2" />
     </Enum>
     <Enum name="Titanic Monarch">
       <EnumMember name="0" display="Original" />

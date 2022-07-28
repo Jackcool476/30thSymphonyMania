@@ -25,6 +25,10 @@ extern "C"
 		{
 			copy_file(string(path) + "/Music/EmeraldHill.brstm", string(path) + "/Data/Music/GreenHill1.brstm", std::filesystem::copy_options::overwrite_existing);
 		}
+		else if (config->getInt("Green Hill", "gh1", 1) == 5)
+		{
+			copy_file(string(path) + "/Music/LostValley.brstm", string(path) + "/Data/Music/GreenHill1.brstm", std::filesystem::copy_options::overwrite_existing);
+		}
 		else
 		{
 			remove((string(path) + "/Data/Music/GreenHill1.brstm").c_str());
@@ -45,6 +49,10 @@ extern "C"
 		else if (config->getInt("Green Hill", "gh2", 2) == 4)
 		{
 			copy_file(string(path) + "/Music/EmeraldHill.brstm", string(path) + "/Data/Music/GreenHill2.brstm", std::filesystem::copy_options::overwrite_existing);
+		}
+		else if (config->getInt("Green Hill", "gh2", 1) == 5)
+		{
+			copy_file(string(path) + "/Music/LostValley.brstm", string(path) + "/Data/Music/GreenHill2.brstm", std::filesystem::copy_options::overwrite_existing);
 		}
 		else
 		{

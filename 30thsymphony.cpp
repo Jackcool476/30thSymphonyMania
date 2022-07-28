@@ -17,36 +17,42 @@ extern "C"
 		introtl = config->getBool("Extra", "introtl", true);
 		title = config->getBool("Extra", "title", true);
 
+		std::string gh = (std::string(path) + "/Music/GreenHill.brstm");
+		std::string ghex = (std::string(path) + "/Music/GreenHillEX.brstm");
+		std::string inthp = (std::string(path) + "/Music/IntroHP.ogg");
+		std::string inttl = (std::string(path) + "/Music/IntroTee.ogg");
+		std::string tile = (std::string(path) + "/Music/TitleScreen.ogg");
+
 		// Green Hill
 		if (gh1 == 1)
 		{
-			helperFunctions.AddReplaceFile("Data/Music/GreenHill1.brstm", (std::string(path) + "/Music/GreenHill.brstm").c_str());
+			helperFunctions.AddReplaceFile("Data/Music/GreenHill1.brstm", (gh).c_str());
 		}
 		else if (gh1 == 2)
 		{
-			helperFunctions.AddReplaceFile("Data/Music/GreenHill1.brstm", (std::string(path) + "/Music/GreenHillEX.brstm").c_str());
+			helperFunctions.AddReplaceFile("Data/Music/GreenHill1.brstm", (ghex).c_str());
 		}
 		if (gh2 == 1)
 		{
-			helperFunctions.AddReplaceFile("Data/Music/GreenHill2.brstm", (std::string(path) + "/Music/GreenHill.brstm").c_str());
+			helperFunctions.AddReplaceFile("Data/Music/GreenHill2.brstm", (gh).c_str());
 		}
 		else if (gh2 == 2)
 		{
-			helperFunctions.AddReplaceFile("Data/Music/GreenHill2.brstm", (std::string(path) + "/Music/GreenHillEX.brstm").c_str());
+			helperFunctions.AddReplaceFile("Data/Music/GreenHill2.brstm", (ghex).c_str());
 		}
 
 		// Extra
 		if (introhp)
 		{
-			helperFunctions.AddReplaceFile("Data/Music/IntroHP.ogg", (std::string(path) + "/Music/IntroHP.ogg").c_str());
+			helperFunctions.AddReplaceFile("Data/Music/IntroHP.ogg", (inthp).c_str());
 		}
 		if (introtl)
 		{
-			helperFunctions.AddReplaceFile("Data/Music/IntroTee.ogg", (std::string(path) + "/Music/IntroTee.ogg").c_str());
+			helperFunctions.AddReplaceFile("Data/Music/IntroTee.ogg", (inttl).c_str());
 		}
 		if (title)
 		{
-			helperFunctions.AddReplaceFile("Data/Music/TitleScreen.ogg", (std::string(path) + "/Music/TitleScreen.ogg").c_str());
+			helperFunctions.AddReplaceFile("Data/Music/TitleScreen.ogg", (tile).c_str());
 		}
 	}
 	__declspec(dllexport) ModInfo ManiaModInfo = {ModLoaderVer, GameVer};

@@ -54,11 +54,11 @@ extern "C"
 		// Chemical Plant
 		if (config->getBool("Chemical Plant", "cp1", true))
 		{
-			copy_file(string(path) + "/Music/ChemicalPlant.brstm", string(path) + "/Data/Music/ChemicalPlant.brstm", std::filesystem::copy_options::overwrite_existing);
+			copy_file(string(path) + "/Music/ChemicalPlant.brstm", string(path) + "/Data/Music/ChemicalPlant1.brstm", std::filesystem::copy_options::overwrite_existing);
 		}
 		else
 		{
-			remove((string(path) + "/Data/Music/ChemicalPlant.brstm").c_str());
+			remove((string(path) + "/Data/Music/ChemicalPlant1.brstm").c_str());
 		}
 		if (config->getBool("Chemical Plant", "cp2", true))
 		{
@@ -88,7 +88,7 @@ extern "C"
 		}
 
 		// Titanic Monarch
-		if (config->getBool("Titanic Monarch", "tm1", 0) == 2)
+		if (config->getInt("Titanic Monarch", "tm1", 0) == 2)
 		{
 			copy_file(string(path) + "/Music/SkySanctuary.brstm", string(path) + "/Data/Music/TitanicMonarch1.brstm", std::filesystem::copy_options::overwrite_existing);
 		}
@@ -96,7 +96,7 @@ extern "C"
 		{
 			remove((string(path) + "/Data/Music/TitanicMonarch1.brstm").c_str());
 		}
-		if (config->getBool("Titanic Monarch", "tm2", 0) == 2)
+		if (config->getInt("Titanic Monarch", "tm2", 0) == 2)
 		{
 			copy_file(string(path) + "/Music/SkySanctuary.brstm", string(path) + "/Data/Music/TitanicMonarch2.brstm", std::filesystem::copy_options::overwrite_existing);
 		}

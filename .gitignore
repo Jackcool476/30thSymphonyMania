@@ -33,8 +33,11 @@
 
 # stuff i think shouldn't be in here
 .vs
+.vscode
 Release
 bin
 *.exp
 *.pdb
-*.lastcodeanalysis
+*.lastcodeanalysisissucceeded
+*.filters
+*.user

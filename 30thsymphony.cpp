@@ -17,42 +17,41 @@ extern "C"
 		introtl = config->getBool("Extra", "introtl", true);
 		title = config->getBool("Extra", "title", true);
 
-		std::string gh = (std::string(path) + "/Music/GreenHill.brstm");
-		std::string ghex = (std::string(path) + "/Music/GreenHillEX.brstm");
-		std::string inthp = (std::string(path) + "/Music/IntroHP.ogg");
-		std::string inttl = (std::string(path) + "/Music/IntroTee.ogg");
-		std::string tile = (std::string(path) + "/Music/TitleScreen.ogg");
-
 		// Green Hill
+		remove((std::string(path) + "Data/Music/GreenHill1.brstm").c_str());
 		if (gh1 == 1)
 		{
-			helperFunctions.AddReplaceFile("Data/Music/GreenHill1.brstm", (gh).c_str());
+			std::filesystem::copy_file(std::string(path) + "Music/GreenHill.brstm", std::string(path) + "Data/Music/GreenHill1.brstm");
 		}
 		else if (gh1 == 2)
 		{
-			helperFunctions.AddReplaceFile("Data/Music/GreenHill1.brstm", (ghex).c_str());
+			std::filesystem::copy_file(std::string(path) + "Music/GreenHillEX.brstm", std::string(path) + "Data/Music/GreenHill1.brstm");
 		}
+		remove((std::string(path) + "Data/Music/GreenHill2.brstm").c_str());
 		if (gh2 == 1)
 		{
-			helperFunctions.AddReplaceFile("Data/Music/GreenHill2.brstm", (gh).c_str());
+			std::filesystem::copy_file(std::string(path) + "Music/GreenHill.brstm", std::string(path) + "Data/Music/GreenHill2.brstm");
 		}
 		else if (gh2 == 2)
 		{
-			helperFunctions.AddReplaceFile("Data/Music/GreenHill2.brstm", (ghex).c_str());
+			std::filesystem::copy_file(std::string(path) + "Music/GreenHillEX.brstm", std::string(path) + "Data/Music/GreenHill2.brstm");
 		}
 
 		// Extra
+		remove((std::string(path) + "Data/Music/IntroHP.ogg").c_str());
 		if (introhp)
 		{
-			helperFunctions.AddReplaceFile("Data/Music/IntroHP.ogg", (inthp).c_str());
+			std::filesystem::copy_file(std::string(path) + "Music/IntroHP.ogg", std::string(path) + "Data/Music/IntroHP.ogg");
 		}
+		remove((std::string(path) + "Data/Music/IntroTee.ogg").c_str());
 		if (introtl)
 		{
-			helperFunctions.AddReplaceFile("Data/Music/IntroTee.ogg", (inttl).c_str());
+			std::filesystem::copy_file(std::string(path) + "Music/IntroTee.ogg", std::string(path) + "Data/Music/IntroTee.ogg");
 		}
+		remove((std::string(path) + "Data/Music/TitleScreen.ogg").c_str());
 		if (title)
 		{
-			helperFunctions.AddReplaceFile("Data/Music/TitleScreen.ogg", (tile).c_str());
+			std::filesystem::copy_file(std::string(path) + "Music/TitleScreen.ogg", std::string(path) + "Data/Music/TitleScreen.ogg");
 		}
 	}
 	__declspec(dllexport) ModInfo ManiaModInfo = {ModLoaderVer, GameVer};

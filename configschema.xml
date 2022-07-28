@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<ConfigSchema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.sonicretro.org">
+	<Groups>
+		<Group name="Green Hill" display="1. Green Hill Zone">
+			<Property name="gh1" type="Green Hill" defaultvalue="1" display="Act 1">
+				<HelpText>Changes the theme in Green Hill Zone Act 1.</HelpText>
+			</Property>
+			<Property name="gh2" type="Green Hill" defaultvalue="2" display="Act 2">
+				<HelpText>Changes the theme in Green Hill Zone Act 2.</HelpText>
+			</Property>
+		</Group>
+    <Group name="Chemical Plant" display="2. Chemical Plant Zone">
+      <Property name="cp1" type="bool" defaultvalue="True" display="Act 1">
+        <HelpText>Changes the theme in Chemical Plant Zone Act 1.</HelpText>
+      </Property>
+      <Property name="cp2" type="bool" defaultvalue="True" display="Act 2">
+        <HelpText>Changes the theme in Chemical Plant Zone Act 2.</HelpText>
+      </Property>
+    </Group>
+    <Group name="Angel Island" display="3. Angel Island Zone">
+      <Property name="ai1" type="bool" defaultvalue="True" display="Story Mode Intro">
+        <HelpText>Changes the theme in the Story Mode opening.</HelpText>
+      </Property>
+      <Property name="ai2" type="bool" defaultvalue="True" display="Encore Mode">
+        <HelpText>Changes the theme in Angel Island Zone in Encore Mode.</HelpText>
+      </Property>
+    </Group>
+    <Group name="Titanic Monarch" display="6. Titanic Monarch Zone">
+      <Property name="tm1" type="Titanic Monarch" defaultvalue="0" display="Act 1">
+        <HelpText>Changes the theme in Titanic Monarch Zone Act 1.</HelpText>
+      </Property>
+      <Property name="tm2" type="Titanic Monarch" defaultvalue="0" display="Act 2">
+        <HelpText>Changes the theme in Titanic Monarch Zone Act 2.</HelpText>
+      </Property>
+    </Group>
+    <Group name="Other" display="Other Songs">
+      <Property name="title" type="bool" defaultvalue="True" display= "Title Theme">
+        <HelpText>Changes the theme on the Title Screen.</HelpText>
+      </Property>
+      <Property name="introhp" type="bool" defaultvalue="True" display= "Intro (Normal)">
+        <HelpText>Changes the theme in the first intro animation.</HelpText>
+      </Property>
+      <Property name="introtl" type="bool" defaultvalue="True" display= "Intro (Tee Lopes)">
+        <HelpText>Changes the theme in the second intro animation and the second credits song.</HelpText>
+      </Property>
+    </Group>
+	</Groups>
+	<Enums>
+		<Enum name="Green Hill">
+			<EnumMember name="0" display="Original" />
+			<EnumMember name="1" display="Normal" />
+			<EnumMember name="2" display="Extended Intro" />
+      <EnumMember name="3" display="Angel Island" />
+      <EnumMember name="4" display="Bonus" />
+		</Enum>
+    <Enum name="Titanic Monarch">
+      <EnumMember name="0" display="Original" />
+      <EnumMember name="2" display="Bonus" />
+    </Enum>
+	</Enums>
+</ConfigSchema>

@@ -17,6 +17,14 @@ extern "C"
 		{
 			copy_file(string(path) + "/Music/GreenHillEX.brstm", string(path) + "/Data/Music/GreenHill1.brstm", std::filesystem::copy_options::overwrite_existing);
 		}
+		else if (config->getInt("Green Hill", "gh1", 1) == 3)
+		{
+			copy_file(string(path) + "/Music/AngelIsland.brstm", string(path) + "/Data/Music/GreenHill1.brstm", std::filesystem::copy_options::overwrite_existing);
+		}
+		else if (config->getInt("Green Hill", "gh1", 1) == 4)
+		{
+			copy_file(string(path) + "/Music/EmeraldHill.brstm", string(path) + "/Data/Music/GreenHill1.brstm", std::filesystem::copy_options::overwrite_existing);
+		}
 		else
 		{
 			remove((string(path) + "/Data/Music/GreenHill1.brstm").c_str());
@@ -30,13 +38,75 @@ extern "C"
 		{
 			copy_file(string(path) + "/Music/GreenHillEX.brstm", string(path) + "/Data/Music/GreenHill2.brstm", std::filesystem::copy_options::overwrite_existing);
 		}
+		else if (config->getInt("Green Hill", "gh2", 2) == 3)
+		{
+			copy_file(string(path) + "/Music/AngelIsland.brstm", string(path) + "/Data/Music/GreenHill2.brstm", std::filesystem::copy_options::overwrite_existing);
+		}
+		else if (config->getInt("Green Hill", "gh2", 2) == 4)
+		{
+			copy_file(string(path) + "/Music/EmeraldHill.brstm", string(path) + "/Data/Music/GreenHill2.brstm", std::filesystem::copy_options::overwrite_existing);
+		}
 		else
 		{
 			remove((string(path) + "/Data/Music/GreenHill2.brstm").c_str());
 		}
 
-		// Extra Songs
-		if (config->getBool("Extra", "introhp", true))
+		// Chemical Plant
+		if (config->getBool("Chemical Plant", "cp1", true))
+		{
+			copy_file(string(path) + "/Music/ChemicalPlant.brstm", string(path) + "/Data/Music/ChemicalPlant.brstm", std::filesystem::copy_options::overwrite_existing);
+		}
+		else
+		{
+			remove((string(path) + "/Data/Music/ChemicalPlant.brstm").c_str());
+		}
+		if (config->getBool("Chemical Plant", "cp2", true))
+		{
+			copy_file(string(path) + "/Music/ChemicalPlant.brstm", string(path) + "/Data/Music/ChemicalPlant2.brstm", std::filesystem::copy_options::overwrite_existing);
+		}
+		else
+		{
+			remove((string(path) + "/Data/Music/ChemicalPlant2.brstm").c_str());
+		}
+
+		// Angel Island
+		if (config->getBool("Angel Island", "ai1", true))
+		{
+			copy_file(string(path) + "/Music/AngelIslandShort.ogg", string(path) + "/Data/Music/AngelIsland.ogg", std::filesystem::copy_options::overwrite_existing);
+		}
+		else
+		{
+			remove((string(path) + "/Data/Music/AngelIsland.ogg").c_str());
+		}
+		if (config->getBool("Angel Island", "ai2", true))
+		{
+			copy_file(string(path) + "/Music/AngelIsland.brstm", string(path) + "/Data/Music/AngelIsland2.brstm", std::filesystem::copy_options::overwrite_existing);
+		}
+		else
+		{
+			remove((string(path) + "/Data/Music/AngelIsland2.brstm").c_str());
+		}
+
+		// Titanic Monarch
+		if (config->getBool("Titanic Monarch", "tm1", 0) == 2)
+		{
+			copy_file(string(path) + "/Music/SkySanctuary.brstm", string(path) + "/Data/Music/TitanicMonarch1.brstm", std::filesystem::copy_options::overwrite_existing);
+		}
+		else
+		{
+			remove((string(path) + "/Data/Music/TitanicMonarch1.brstm").c_str());
+		}
+		if (config->getBool("Titanic Monarch", "tm2", 0) == 2)
+		{
+			copy_file(string(path) + "/Music/SkySanctuary.brstm", string(path) + "/Data/Music/TitanicMonarch2.brstm", std::filesystem::copy_options::overwrite_existing);
+		}
+		else
+		{
+			remove((string(path) + "/Data/Music/TitanicMonarch2.brstm").c_str());
+		}
+
+		// Other Songs 
+		if (config->getBool("Other", "introhp", true))
 		{
 			copy_file(string(path) + "/Music/IntroHP.ogg", string(path) + "/Data/Music/IntroHP.ogg", std::filesystem::copy_options::overwrite_existing);
 		}
@@ -45,7 +115,7 @@ extern "C"
 			remove((string(path) + "/Data/Music/IntroHP.ogg").c_str());
 		}
 
-		if (config->getBool("Extra", "introtl", true))
+		if (config->getBool("Other", "introtl", true))
 		{
 			copy_file(string(path) + "/Music/IntroTee.ogg", string(path) + "/Data/Music/IntroTee.ogg", std::filesystem::copy_options::overwrite_existing);
 		}
@@ -54,7 +124,7 @@ extern "C"
 			remove((string(path) + "/Data/Music/IntroTee.ogg").c_str());
 		}
 
-		if (config->getBool("Extra", "title", true))
+		if (config->getBool("Other", "title", true))
 		{
 			copy_file(string(path) + "/Music/TitleScreen.ogg", string(path) + "/Data/Music/TitleScreen.ogg", std::filesystem::copy_options::overwrite_existing);
 		}

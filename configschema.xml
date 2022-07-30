@@ -56,6 +56,9 @@
       <Property name="ss2" type="Stardust Speedway" defaultvalue="0" display= "Stardust Speedway Act 2">
         <HelpText>Changes the theme in Stardust Speedway Zone Act 2. Only bonus songs.</HelpText>
       </Property>
+      <Property name="ufo" type="bool" defaultvalue="False" display= "UFO Special Stages">
+        <HelpText>Changes the theme in the UFO special stages to Can You Feel The Sunshine from Sonic R.</HelpText>
+      </Property>
     </Group>
   </Groups>
   <Enums>
@@ -64,17 +67,17 @@
       <EnumMember name="1" display="Normal" />
       <EnumMember name="2" display="Extended Intro" />
       <EnumMember name="3" display="Angel Island" />
-      <EnumMember name="4" display="Bonus" />
-      <EnumMember name="5" display="Bonus 2" />
+      <EnumMember name="4" display="Emerald Hill" />
+      <EnumMember name="5" display="Lost Vallish" />
     </Enum>
     <Enum name="Titanic Monarch">
       <EnumMember name="0" display="Original" />
-      <EnumMember name="2" display="Bonus" />
+      <EnumMember name="2" display="Sky Sanctuary" />
     </Enum>
     <Enum name="Stardust Speedway">
       <EnumMember name="0" display="Original" />
-      <EnumMember name="1" display="Bonus" />
-      <EnumMember name="2" display="Bonus 2" />
+      <EnumMember name="1" display="Sonic Boom" />
+      <EnumMember name="2" display="City Escape" />
     </Enum>
   </Enums>
 </ConfigSchema>

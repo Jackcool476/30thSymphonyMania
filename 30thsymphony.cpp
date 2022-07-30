@@ -172,6 +172,15 @@ extern "C"
 		{
 			remove((string(path) + "/Data/Music/StardustSpeedway2.brstm").c_str());
 		}
+
+		if (config->getBool("Extra", "ufo", false))
+		{
+			copy_file(string(path) + "/Music/Sunshine.brstm", string(path) + "/Data/Music/UFOSpecial.brstm", std::filesystem::copy_options::overwrite_existing);
+		}
+		else
+		{
+			remove((string(path) + "/Data/Music/UFOSpecial.brstm").c_str());
+		}
 	}
 	__declspec(dllexport) ModInfo ManiaModInfo = {ModLoaderVer, GameVer};
 }

@@ -3,11 +3,8 @@
  * Text conversion functions.
  */
 
-#include "stdafx.h"
+#include "pch.h"
 #include "TextConv.hpp"
-
-#define WIN32_LEAN_AND_MEAN
-#include <windows.h>
 
 #define CP_SJIS 932
 

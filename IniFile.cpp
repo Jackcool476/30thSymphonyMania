@@ -3,16 +3,9 @@
  * INI file parser.
  */
 
-#include "stdafx.h"
-#include "IniFile.hpp"
+#include "pch.h"
 #include "TextConv.hpp"
 #include "Utils.hpp"
-
-// Needed for CP_UTF8 if stdafx.h doesn't have windows.h.
-#ifndef WIN32_LEAN_AND_MEAN
-#define WIN32_LEAN_AND_MEAN
-#endif
-#include <windows.h>
 
 #include <algorithm>
 #include <cctype>

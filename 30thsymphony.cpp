@@ -33,7 +33,6 @@ extern "C"
 		{
 			remove((string(path) + "/Data/Music/GreenHill1.brstm").c_str());
 		}
-
 		if (config->getInt("Green Hill", "gh2", 2) == 1)
 		{
 			copy_file(string(path) + "/Music/GreenHill.brstm", string(path) + "/Data/Music/GreenHill2.brstm", std::filesystem::copy_options::overwrite_existing);
@@ -113,7 +112,24 @@ extern "C"
 			remove((string(path) + "/Data/Music/TitanicMonarch2.brstm").c_str());
 		}
 
-		// Other Songs 
+		// Other Songs
+		if (config->getBool("Other", "title", true))
+		{
+			copy_file(string(path) + "/Music/TitleScreen.ogg", string(path) + "/Data/Music/TitleScreen.ogg", std::filesystem::copy_options::overwrite_existing);
+		}
+		else
+		{
+			remove((string(path) + "/Data/Music/TitleScreen.ogg").c_str());
+		}
+		if (config->getBool("Other", "plus", true))
+		{
+			copy_file(string(path) + "/Music/Plus.wav", string(path) + "/Data/SoundFX/Stage/Plus.wav", std::filesystem::copy_options::overwrite_existing);
+		}
+		else
+		{
+			remove((string(path) + "/Data/SoundFX/Stage/Plus.wav").c_str());
+		}
+
 		if (config->getBool("Other", "introhp", true))
 		{
 			copy_file(string(path) + "/Music/IntroHP.ogg", string(path) + "/Data/Music/IntroHP.ogg", std::filesystem::copy_options::overwrite_existing);
@@ -122,7 +138,6 @@ extern "C"
 		{
 			remove((string(path) + "/Data/Music/IntroHP.ogg").c_str());
 		}
-
 		if (config->getBool("Other", "introtl", true))
 		{
 			copy_file(string(path) + "/Music/IntroTee.ogg", string(path) + "/Data/Music/IntroTee.ogg", std::filesystem::copy_options::overwrite_existing);
@@ -132,13 +147,30 @@ extern "C"
 			remove((string(path) + "/Data/Music/IntroTee.ogg").c_str());
 		}
 
-		if (config->getBool("Other", "title", true))
+		// Extra Songs
+		if (config->getInt("Extra", "ss1", 0) == 1)
 		{
-			copy_file(string(path) + "/Music/TitleScreen.ogg", string(path) + "/Data/Music/TitleScreen.ogg", std::filesystem::copy_options::overwrite_existing);
+			copy_file(string(path) + "/Music/SonicBoom.brstm", string(path) + "/Data/Music/StardustSpeedway1.brstm", std::filesystem::copy_options::overwrite_existing);
+		}
+		else if (config->getInt("Extra", "ss1", 0) == 2)
+		{
+			copy_file(string(path) + "/Music/CityEscape.brstm", string(path) + "/Data/Music/StardustSpeedway1.brstm", std::filesystem::copy_options::overwrite_existing);
 		}
 		else
 		{
-			remove((string(path) + "/Data/Music/TitleScreen.ogg").c_str());
+			remove((string(path) + "/Data/Music/StardustSpeedway1.brstm").c_str());
+		}
+		if (config->getInt("Extra", "ss2", 0) == 1)
+		{
+			copy_file(string(path) + "/Music/SonicBoom.brstm", string(path) + "/Data/Music/StardustSpeedway2.brstm", std::filesystem::copy_options::overwrite_existing);
+		}
+		else if (config->getInt("Extra", "ss2", 0) == 2)
+		{
+			copy_file(string(path) + "/Music/CityEscape.brstm", string(path) + "/Data/Music/StardustSpeedway2.brstm", std::filesystem::copy_options::overwrite_existing);
+		}
+		else
+		{
+			remove((string(path) + "/Data/Music/StardustSpeedway2.brstm").c_str());
 		}
 	}
 	__declspec(dllexport) ModInfo ManiaModInfo = {ModLoaderVer, GameVer};

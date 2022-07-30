@@ -39,11 +39,22 @@
       <Property name="title" type="bool" defaultvalue="True" display= "Title Theme">
         <HelpText>Changes the theme on the Title Screen.</HelpText>
       </Property>
+      <Property name="plus" type="bool" defaultvalue="True" display= "Remove Plus Noise">
+        <HelpText>Removes the sound effect that plays on the Title Screen when the Plus DLC is installed. Highly recommended to be used in conjunction with the above option due to how out of place it sounds with the orchestrated music playing behind it.</HelpText>
+      </Property>
       <Property name="introhp" type="bool" defaultvalue="True" display= "Intro (Normal)">
         <HelpText>Changes the theme in the first intro animation.</HelpText>
       </Property>
       <Property name="introtl" type="bool" defaultvalue="True" display= "Intro (Tee Lopes)">
         <HelpText>Changes the theme in the second intro animation and the second credits song.</HelpText>
+      </Property>
+    </Group>
+    <Group name="Extra" display="Extra Songs">
+      <Property name="ss1" type="Stardust Speedway" defaultvalue="0" display= "Stardust Speedway Act 1">
+        <HelpText>Changes the theme in Stardust Speedway Zone Act 1. Only bonus songs.</HelpText>
+      </Property>
+      <Property name="ss2" type="Stardust Speedway" defaultvalue="0" display= "Stardust Speedway Act 2">
+        <HelpText>Changes the theme in Stardust Speedway Zone Act 2. Only bonus songs.</HelpText>
       </Property>
     </Group>
   </Groups>
@@ -59,6 +70,11 @@
     <Enum name="Titanic Monarch">
       <EnumMember name="0" display="Original" />
       <EnumMember name="2" display="Bonus" />
+    </Enum>
+    <Enum name="Stardust Speedway">
+      <EnumMember name="0" display="Original" />
+      <EnumMember name="1" display="Bonus" />
+      <EnumMember name="2" display="Bonus 2" />
     </Enum>
   </Enums>
 </ConfigSchema>

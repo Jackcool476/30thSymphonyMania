@@ -70,7 +70,7 @@
         <HelpText>Orchestrates the theme on the Title Screen.</HelpText>
       </Property>
       <Property name="plus" type="bool" defaultvalue="True" display="Remove Plus SoundFX">
-        <HelpText>Removes the sound effect that plays on the Title Screen when the Plus DLC is installed. Highly recommended to be used in conjunction with the above option due to how out of place it sounds with the orchestrated music playing behind it.</HelpText>
+        <HelpText>Removes the sound effect that plays on the Title Screen when the Plus DLC is installed.</HelpText>
       </Property>
       <Property name="introhp" type="bool" defaultvalue="True" display="Intro (Normal)">
         <HelpText>Orchestrates the theme in the first intro animation.</HelpText>

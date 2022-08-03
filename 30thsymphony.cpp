@@ -148,25 +148,17 @@ extern "C"
 		}
 
 		// Extra Songs
-		if (config->getInt("Extra", "ss1", 0) == 1)
+		if (config->getInt("Extra", "ss1", 0) == true)
 		{
 			copy_file(string(path) + "/Music/SonicBoom.brstm", string(path) + "/Data/Music/StardustSpeedway1.brstm", std::filesystem::copy_options::overwrite_existing);
-		}
-		else if (config->getInt("Extra", "ss1", 0) == 2)
-		{
-			copy_file(string(path) + "/Music/CityEscape.brstm", string(path) + "/Data/Music/StardustSpeedway1.brstm", std::filesystem::copy_options::overwrite_existing);
 		}
 		else
 		{
 			remove((string(path) + "/Data/Music/StardustSpeedway1.brstm").c_str());
 		}
-		if (config->getInt("Extra", "ss2", 0) == 1)
+		if (config->getInt("Extra", "ss2", 0) == true)
 		{
 			copy_file(string(path) + "/Music/SonicBoom.brstm", string(path) + "/Data/Music/StardustSpeedway2.brstm", std::filesystem::copy_options::overwrite_existing);
-		}
-		else if (config->getInt("Extra", "ss2", 0) == 2)
-		{
-			copy_file(string(path) + "/Music/CityEscape.brstm", string(path) + "/Data/Music/StardustSpeedway2.brstm", std::filesystem::copy_options::overwrite_existing);
 		}
 		else
 		{

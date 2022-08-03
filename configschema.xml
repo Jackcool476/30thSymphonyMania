@@ -51,10 +51,10 @@
     </Group>
     <Group name="Extra" display="Extra Songs">
       <Property name="ss1" type="bool" defaultvalue="0" display= "Stardust Speedway Act 1">
-        <HelpText>Changes the theme in Stardust Speedway Zone Act 1. Only bonus songs.</HelpText>
+        <HelpText>Changes the theme in Stardust Speedway Zone Act 1 with Sonic Boom</HelpText>
       </Property>
       <Property name="ss2" type="bool" defaultvalue="0" display= "Stardust Speedway Act 2">
-        <HelpText>Changes the theme in Stardust Speedway Zone Act 2. Only bonus songs.</HelpText>
+        <HelpText>Changes the theme in Stardust Speedway Zone Act 2 with Sonic Boom.</HelpText>
       </Property>
       <Property name="ufo" type="bool" defaultvalue="False" display= "UFO Special Stages">
         <HelpText>Changes the theme in the UFO special stages to Can You Feel The Sunshine from Sonic R.</HelpText>

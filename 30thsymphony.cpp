@@ -139,7 +139,7 @@ extern "C"
 		// Angel Island
 		if (config->getBool("Press Garden", "pg1", true))
 		{
-			copy_file(string(path) + "/Music/PressGarden.brstm", string(path) + "/Data/Music/PressGarden1.brstm", std::filesystem::copy_options::overwrite_existing);
+			copy_file(string(path) + "/Music/PressGarden.brstm", string(path) + "/Data/Music/PulpSolstice1.brstm", std::filesystem::copy_options::overwrite_existing);
 		}
 		else
 		{
@@ -147,7 +147,7 @@ extern "C"
 		}
 		if (config->getBool("Press Garden", "pg2", true))
 		{
-			copy_file(string(path) + "/Music/PressGarden.brstm", string(path) + "/Data/Music/PressGarden2.brstm", std::filesystem::copy_options::overwrite_existing);
+			copy_file(string(path) + "/Music/PressGarden.brstm", string(path) + "/Data/Music/PulpSolstice2.brstm", std::filesystem::copy_options::overwrite_existing);
 		}
 		else
 		{

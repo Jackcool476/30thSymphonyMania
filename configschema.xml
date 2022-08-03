@@ -5,74 +5,101 @@
   <Groups>
     <Group name="Green Hill" display="1. Green Hill Zone">
       <Property name="gh1" type="Green Hill" defaultvalue="1" display="Act 1">
-        <HelpText>Changes the theme in Green Hill Zone Act 1.</HelpText>
+        <HelpText>Orchestrates the theme in Green Hill Zone Act 1.</HelpText>
       </Property>
       <Property name="gh2" type="Green Hill" defaultvalue="2" display="Act 2">
-        <HelpText>Changes the theme in Green Hill Zone Act 2.</HelpText>
+        <HelpText>Orchestrates the theme in Green Hill Zone Act 2.</HelpText>
       </Property>
     </Group>
     <Group name="Chemical Plant" display="2. Chemical Plant Zone">
       <Property name="cp1" type="bool" defaultvalue="True" display="Act 1">
-        <HelpText>Changes the theme in Chemical Plant Zone Act 1.</HelpText>
+        <HelpText>Orchestrates the theme in Chemical Plant Zone Act 1.</HelpText>
       </Property>
       <Property name="cp2" type="bool" defaultvalue="True" display="Act 2">
-        <HelpText>Changes the theme in Chemical Plant Zone Act 2.</HelpText>
+        <HelpText>Orchestrates the theme in Chemical Plant Zone Act 2.</HelpText>
       </Property>
     </Group>
     <Group name="Angel Island" display="3. Angel Island Zone">
       <Property name="ai1" type="bool" defaultvalue="True" display="Story Mode Intro">
-        <HelpText>Changes the theme in the Story Mode opening.</HelpText>
+        <HelpText>Orchestrates the theme in the Story Mode opening.</HelpText>
       </Property>
       <Property name="ai2" type="bool" defaultvalue="True" display="Encore Mode">
-        <HelpText>Changes the theme in Angel Island Zone in Encore Mode.</HelpText>
+        <HelpText>Orchestrates the theme in Angel Island Zone in Encore Mode.</HelpText>
+      </Property>
+    </Group>
+    <Group name="Studiopolis" display="4. Studiopolis Zone">
+      <Property name="s1" type="Studiopolis" defaultvalue="1" display="Act 1">
+        <HelpText>Orchestrates the theme in Studiopolis Zone Act 1.</HelpText>
+      </Property>
+      <Property name="s2" type="Studiopolis" defaultvalue="1" display="Act 2">
+        <HelpText>Orchestrates the theme in Studiopolis Zone Act 2.</HelpText>
+      </Property>
+    </Group>
+    <Group name="Press Garden" display="5. Press Garden Zone">
+      <Property name="pg1" type="bool" defaultvalue="True" display="Act 1">
+        <HelpText>Orchestrates the theme in Press Garden Zone Act 1.</HelpText>
+      </Property>
+      <Property name="pg2" type="bool" defaultvalue="True" display="Act 2">
+        <HelpText>Orchestrates the theme in Press Garden Zone Act 2.</HelpText>
       </Property>
     </Group>
     <Group name="Titanic Monarch" display="6. Titanic Monarch Zone">
-      <Property name="tm1" type="Titanic Monarch" defaultvalue="0" display="Act 1">
-        <HelpText>Changes the theme in Titanic Monarch Zone Act 1.</HelpText>
+      <Property name="tm1" type="Titanic Monarch" defaultvalue="1" display="Act 1">
+        <HelpText>Orchestrates the theme in Titanic Monarch Zone Act 1.</HelpText>
       </Property>
-      <Property name="tm2" type="Titanic Monarch" defaultvalue="0" display="Act 2">
-        <HelpText>Changes the theme in Titanic Monarch Zone Act 2.</HelpText>
-      </Property>
-    </Group>
-    <Group name="Other" display="Other Songs">
-      <Property name="title" type="bool" defaultvalue="True" display= "Title Theme">
-        <HelpText>Changes the theme on the Title Screen.</HelpText>
-      </Property>
-      <Property name="plus" type="bool" defaultvalue="True" display= "Remove Plus Noise">
-        <HelpText>Removes the sound effect that plays on the Title Screen when the Plus DLC is installed. Highly recommended to be used in conjunction with the above option due to how out of place it sounds with the orchestrated music playing behind it.</HelpText>
-      </Property>
-      <Property name="introhp" type="bool" defaultvalue="True" display= "Intro (Normal)">
-        <HelpText>Changes the theme in the first intro animation.</HelpText>
-      </Property>
-      <Property name="introtl" type="bool" defaultvalue="True" display= "Intro (Tee Lopes)">
-        <HelpText>Changes the theme in the second intro animation and the second credits song.</HelpText>
+      <Property name="tm2" type="Titanic Monarch" defaultvalue="1" display="Act 2">
+        <HelpText>Orchestrates the theme in Titanic Monarch Zone Act 2.</HelpText>
       </Property>
     </Group>
     <Group name="Extra" display="Extra Songs">
-      <Property name="ss1" type="bool" defaultvalue="False" display= "Stardust Speedway Act 1">
-        <HelpText>Changes the theme in Stardust Speedway Zone Act 1 with Sonic Boom.</HelpText>
+      <Property name="ss1" type="bool" defaultvalue="False" display="Stardust Speedway Act 1">
+        <HelpText>Orchestrates the theme in Stardust Speedway Zone Act 1 with Sonic Boom.</HelpText>
       </Property>
-      <Property name="ss2" type="bool" defaultvalue="False" display= "Stardust Speedway Act 2">
-        <HelpText>Changes the theme in Stardust Speedway Zone Act 2 with Sonic Boom.</HelpText>
+      <Property name="ss2" type="bool" defaultvalue="False" display="Stardust Speedway Act 2">
+        <HelpText>Orchestrates the theme in Stardust Speedway Zone Act 2 with Sonic Boom.</HelpText>
       </Property>
-      <Property name="ufo" type="bool" defaultvalue="False" display= "UFO Special Stages">
-        <HelpText>Changes the theme in the UFO special stages to Can You Feel The Sunshine from Sonic R.</HelpText>
+      <Property name="ufo" type="bool" defaultvalue="False" display="UFO Special Stages">
+        <HelpText>Orchestrates the theme in the UFO special stages to Can You Feel The Sunshine from Sonic R.</HelpText>
+      </Property>
+      <Property name="boss" type="bool" defaultvalue="False" display="All Boss Themes">
+        <HelpText>Orchestrates the theme in every boss theme (Mini, Eggman 1 and 2, HBH, Metal, Final, Puyo, ERZ and Pinch?) to the Sonic 1 boss theme.</HelpText>
+      </Property>
+    </Group>
+    <Group name="Other" display="Other Songs">
+      <Property name="title" type="bool" defaultvalue="True" display="Title Theme">
+        <HelpText>Orchestrates the theme on the Title Screen.</HelpText>
+      </Property>
+      <Property name="plus" type="bool" defaultvalue="True" display="Remove Plus SoundFX">
+        <HelpText>Removes the sound effect that plays on the Title Screen when the Plus DLC is installed. Highly recommended to be used in conjunction with the above option due to how out of place it sounds with the orchestrated music playing behind it.</HelpText>
+      </Property>
+      <Property name="introhp" type="bool" defaultvalue="True" display="Intro (Normal)">
+        <HelpText>Orchestrates the theme in the first intro animation.</HelpText>
+      </Property>
+      <Property name="introtl" type="bool" defaultvalue="True" display="Intro (Tee Lopes)">
+        <HelpText>Orchestrates the theme in the second intro animation and the second credits song.</HelpText>
       </Property>
     </Group>
   </Groups>
   <Enums>
     <Enum name="Green Hill">
-      <EnumMember name="0" display="Original" />
-      <EnumMember name="1" display="Normal" />
-      <EnumMember name="2" display="Extended Intro" />
-      <EnumMember name="3" display="Angel Island" />
-      <EnumMember name="4" display="Emerald Hill" />
-      <EnumMember name="5" display="Lost Vallish" />
+      <EnumMember name="0" display="Original"/>
+      <EnumMember name="1" display="Orchestrated"/>
+      <EnumMember name="2" display="Extended Intro"/>
+      <EnumMember name="3" display="Angel Island"/>
+      <EnumMember name="4" display="Emerald Hill"/>
+      <EnumMember name="5" display="Lost Vallish"/>
+    </Enum>
+    <Enum name="Studiopolis">
+      <EnumMember name="0" display="Original"/>
+      <EnumMember name="1" display="Orchestrated"/>
+      <EnumMember name="2" display="Casino Night"/>
+      <EnumMember name="3" display="City Escape"/>
+      <EnumMember name="4" display="Rooftop Run"/>
     </Enum>
     <Enum name="Titanic Monarch">
-      <EnumMember name="0" display="Original" />
-      <EnumMember name="2" display="Sky Sanctuary" />
+      <EnumMember name="0" display="Original"/>
+      <EnumMember name="1" display="Orchestrated"/>
+      <EnumMember name="2" display="Sky Sanctuary"/>
     </Enum>
   </Enums>
 </ConfigSchema>

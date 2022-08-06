@@ -75,7 +75,7 @@
     <ExternalIncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);$(UniversalCRT_IncludePath);</ExternalIncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <LibraryPath>$(VC_LibraryPath_x86);$(WindowsSDK_LibraryPath_x86);bin\</LibraryPath>
+    <LibraryPath>$(VC_LibraryPath_x86);$(WindowsSDK_LibraryPath_x86)</LibraryPath>
     <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);mod-loader-common\ModLoaderCommon;mania-mod-loader/ManiaModLoader/include/</IncludePath>
     <OutDir>$(SolutionDir)\</OutDir>
   </PropertyGroup>
@@ -107,6 +107,7 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>$(CoreLibraryDependencies);%(AdditionalDependencies);bin/ModLoaderCommon.lib</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -142,9 +143,7 @@
   <ItemGroup>
     <ClCompile Include="30thsymphony.cpp" />
     <ClCompile Include="dllmain.cpp" />
-    <ClCompile Include="IniFile.cpp" />
     <ClCompile Include="pch.cpp" />
-    <ClCompile Include="TextConv.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h" />

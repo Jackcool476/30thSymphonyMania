@@ -4,7 +4,7 @@ using namespace std::filesystem;
 
 extern "C"
 {
-	__declspec(dllexport) void Init(const char *path)
+	__declspec(dllexport) void Init(const char *path, HelperFunctions helperFunctions)
 	{
 		const IniFile *config = new IniFile(string(path) + "/config.ini");
 

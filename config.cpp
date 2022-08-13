@@ -246,7 +246,7 @@ extern "C"
 		}
 		if (config->getBool("Other", "plus", true))
 		{
-			copy_file(music + "Plus.wav", string(path) + "/Data/SoundFX/Stage/Plus.wav", copy_options::overwrite_existing);
+			copy_file(music + "Plus.wav", soundfx + "Plus.wav", copy_options::overwrite_existing);
 		}
 		else
 		{

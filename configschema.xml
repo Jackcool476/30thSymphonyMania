@@ -53,16 +53,16 @@
     </Group>
     <Group name="Extra" display="Extra Songs">
       <Property name="ss1" type="bool" defaultvalue="False" display="Stardust Speedway Act 1">
-        <HelpText>Orchestrates the theme in Stardust Speedway Zone Act 1 with Sonic Boom.</HelpText>
+        <HelpText>Changes the theme in Stardust Speedway Zone Act 1 to Crush 40's rendition of Sonic Boom.</HelpText>
       </Property>
       <Property name="ss2" type="bool" defaultvalue="False" display="Stardust Speedway Act 2">
-        <HelpText>Orchestrates the theme in Stardust Speedway Zone Act 2 with Sonic Boom.</HelpText>
+        <HelpText>Changes the theme in Stardust Speedway Zone Act 2 to Crush 40's rendition of Sonic Boom.</HelpText>
       </Property>
       <Property name="ufo" type="bool" defaultvalue="False" display="UFO Special Stages">
-        <HelpText>Orchestrates the theme in the UFO special stages to Can You Feel The Sunshine from Sonic R.</HelpText>
+        <HelpText>Changes the theme in the UFO special stages to the orchestrated version of Can You Feel The Sunshine from Sonic R.</HelpText>
       </Property>
-      <Property name="boss" type="bool" defaultvalue="False" display="All Boss Themes">
-        <HelpText>Orchestrates the theme in every boss theme (Mini, Eggman 1 and 2, HBH, Metal, Final, Puyo, ERZ and Pinch?) to the Sonic 1 boss theme.</HelpText>
+      <Property name="boss" type="bool" defaultvalue="False" display="Final Boss">
+        <HelpText>Changes the theme in the final boss to the Sonic 1 boss theme.</HelpText>
       </Property>
     </Group>
     <Group name="Other" display="Other Songs">
@@ -100,6 +100,11 @@
       <EnumMember name="0" display="Original"/>
       <EnumMember name="1" display="Orchestrated"/>
       <EnumMember name="2" display="Sky Sanctuary"/>
+    </Enum>
+    <Enum name="Stardust Speedway">
+      <EnumMember name="0" display="Original"/>
+      <EnumMember name="1" display="Sonic Boom"/>
+      <EnumMember name="2" display="City Escape"/>
     </Enum>
   </Enums>
 </ConfigSchema>

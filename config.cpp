@@ -7,267 +7,290 @@ extern "C"
 	__declspec(dllexport) void Init(const char *path)
 	{
 		const IniFile *config = new IniFile(string(path) + "/config.ini");
-		string data = path + string("/Data/Music/");
-		string music = path + string("/Music/");
+		string datam = path + string("/Data/Music/");
+		string datas = path + string("/Data/Stages/");
 		string soundfx = path + string("/Data/SoundFX/Stage/");
+		string music = path + string("/Music/");
+		string stages = path + string("/Stages/");
 
 		// Green Hill
 		if (config->getInt("Green Hill", "gh1", 1) == 1)
 		{
-			copy_file(music + "GreenHill.brstm", data + "GreenHill1.brstm", copy_options::overwrite_existing);
+			copy_file(stages + "GHZ/Scene1.bin", datas + "GHZ/Scene1.bin", copy_options::overwrite_existing);
 		}
 		else if (config->getInt("Green Hill", "gh1", 1) == 2)
 		{
-			copy_file(music + "GreenHillEX.brstm", data + "GreenHill1.brstm", copy_options::overwrite_existing);
+			copy_file(stages + "GHZ/Scene1Long.bin", datas + "GHZ/Scene1.bin", copy_options::overwrite_existing);
 		}
 		else if (config->getInt("Green Hill", "gh1", 1) == 3)
 		{
-			copy_file(music + "AngelIsland.brstm", data + "GreenHill1.brstm", copy_options::overwrite_existing);
+			copy_file(stages + "GHZ/Scene1Angel.bin", datas + "GHZ/Scene1.bin", copy_options::overwrite_existing);
 		}
 		else if (config->getInt("Green Hill", "gh1", 1) == 4)
 		{
-			copy_file(music + "EmeraldHill.brstm", data + "GreenHill1.brstm", copy_options::overwrite_existing);
+			copy_file(stages + "GHZ/Scene1Emerald.bin", datas + "GHZ/Scene1.bin", copy_options::overwrite_existing);
 		}
 		else if (config->getInt("Green Hill", "gh1", 1) == 5)
 		{
-			copy_file(music + "LostValley.brstm", data + "GreenHill1.brstm", copy_options::overwrite_existing);
+			copy_file(stages + "GHZ/Scene1Valley.bin", datas + "GHZ/Scene1.bin", copy_options::overwrite_existing);
 		}
 		else
 		{
-			remove((data + "GreenHill1.brstm").c_str());
+			remove(datas + "GHZ/Scene1.bin");
 		}
 		if (config->getInt("Green Hill", "gh2", 2) == 1)
 		{
-			copy_file(music + "GreenHill.brstm", data + "GreenHill2.brstm", copy_options::overwrite_existing);
+			copy_file(stages + "GHZ/Scene2Short.bin", datas + "GHZ/Scene2.bin", copy_options::overwrite_existing);
 		}
 		else if (config->getInt("Green Hill", "gh2", 2) == 2)
 		{
-			copy_file(music + "GreenHillEX.brstm", data + "GreenHill2.brstm", copy_options::overwrite_existing);
+			copy_file(stages + "GHZ/Scene2.bin", datas + "GHZ/Scene2.bin", copy_options::overwrite_existing);
 		}
 		else if (config->getInt("Green Hill", "gh2", 2) == 3)
 		{
-			copy_file(music + "AngelIsland.brstm", data + "GreenHill2.brstm", copy_options::overwrite_existing);
+			copy_file(stages + "GHZ/Scene2Angel.bin", datas + "GHZ/Scene2.bin", copy_options::overwrite_existing);
 		}
 		else if (config->getInt("Green Hill", "gh2", 2) == 4)
 		{
-			copy_file(music + "EmeraldHill.brstm", data + "GreenHill2.brstm", copy_options::overwrite_existing);
+			copy_file(stages + "GHZ/Scene2Emerald.bin", datas + "GHZ/Scene2.bin", copy_options::overwrite_existing);
 		}
 		else if (config->getInt("Green Hill", "gh2", 1) == 5)
 		{
-			copy_file(music + "LostValley.brstm", data + "GreenHill2.brstm", copy_options::overwrite_existing);
+			copy_file(stages + "GHZ/Scene2Valley.bin", datas + "GHZ/Scene2.bin", copy_options::overwrite_existing);
 		}
 		else
 		{
-			remove((data + "GreenHill2.brstm").c_str());
+			remove(datas + "GHZ/Scene2.bin");
 		}
 
 		// Chemical Plant
 		if (config->getBool("Chemical Plant", "cp1", true))
 		{
-			copy_file(music + "ChemicalPlant.brstm", data + "ChemicalPlant1.brstm", copy_options::overwrite_existing);
+			copy_file(stages + "CPZ/Scene1.bin", datas + "CPZ/Scene1.bin", copy_options::overwrite_existing);
 		}
 		else
 		{
-			remove((data + "ChemicalPlant1.brstm").c_str());
+			remove(datas + "CPZ/Scene1.bin)");
 		}
 		if (config->getBool("Chemical Plant", "cp2", true))
 		{
-			copy_file(music + "ChemicalPlant.brstm", data + "ChemicalPlant2.brstm", copy_options::overwrite_existing);
+			copy_file(stages + "CPZ/Scene2.bin", datas + "CPZ/Scene2.bin", copy_options::overwrite_existing);
 		}
 		else
 		{
-			remove((data + "ChemicalPlant2.brstm").c_str());
+			remove(datas + "CPZ/Scene2.bin");
 		}
 
 		// Angel Island
 		if (config->getBool("Angel Island", "ai1", true))
 		{
-			copy_file(music + "AngelIslandShort.ogg", data + "AngelIsland.ogg", copy_options::overwrite_existing);
+			copy_file(stages + "AIZ/Scene1.bin", datas + "AIZ/Scene1.bin", copy_options::overwrite_existing);
 		}
 		else
 		{
-			remove((data + "AngelIsland.ogg").c_str());
+			remove(datas + "AIZ/Scene1.bin");
 		}
 		if (config->getBool("Angel Island", "ai2", true))
 		{
-			copy_file(music + "AngelIsland.brstm", data + "AngelIsland2.brstm", copy_options::overwrite_existing);
+			copy_file(stages + "AIZ/Scene2.bin", datas + "AIZ/Scene2.bin", copy_options::overwrite_existing);
 		}
 		else
 		{
-			remove((data + "AngelIsland2.brstm").c_str());
+			remove(datas + "AIZ/Scene2.bin");
 		}
 
 		// Studiopolis
 		if (config->getInt("Studiopolis", "s1", 1) == 1)
 		{
-			copy_file(music + "Studiopolis.brstm", data + "Studiopolis1.brstm", copy_options::overwrite_existing);
+			copy_file(stages + "SPZ1/Scene1.bin", datas + "SPZ1/Scene1.bin", copy_options::overwrite_existing);
 		}
 		else if (config->getInt("Studiopolis", "s1", 1) == 2)
 		{
-			copy_file(music + "CasinoNight.brstm", data + "Studiopolis1.brstm", copy_options::overwrite_existing);
+			copy_file(stages + "SPZ1/Scene1Casino.bin", datas + "SPZ1/Scene1.bin", copy_options::overwrite_existing);
 		}
 		else if (config->getInt("Studiopolis", "s1", 1) == 3)
 		{
-			copy_file(music + "CityEscape.brstm", data + "Studiopolis1.brstm", copy_options::overwrite_existing);
+			copy_file(stages + "SPZ1/Scene1City.bin", datas + "SPZ1/Scene1.bin", copy_options::overwrite_existing);
 		}
 		else if (config->getInt("Studiopolis", "s1", 1) == 4)
 		{
-			copy_file(music + "RooftopRun.brstm", data + "Studiopolis1.brstm", copy_options::overwrite_existing);
+			copy_file(stages + "SPZ1/Scene1Rooftop.bin", datas + "SPZ1/Scene1.bin", copy_options::overwrite_existing);
 		}
 		else
 		{
-			remove((data + "Studiopolis1.brstm").c_str());
+			remove(datas + "SPZ1/Scene1.bin");
 		}
 		if (config->getInt("Studiopolis", "s2", 1) == 1)
 		{
-			copy_file(music + "Studiopolis.brstm", data + "Studiopolis2.brstm", copy_options::overwrite_existing);
+			copy_file(stages + "SPZ2/Scene1.bin", datas + "SPZ2/Scene1.bin", copy_options::overwrite_existing);
 		}
 		else if (config->getInt("Studiopolis", "s2", 1) == 2)
 		{
-			copy_file(music + "CasinoNight.brstm", data + "Studiopolis2.brstm", copy_options::overwrite_existing);
+			copy_file(stages + "SPZ2/Scene1Casino.bin", datas + "SPZ2/Scene1.bin", copy_options::overwrite_existing);
 		}
 		else if (config->getInt("Studiopolis", "s2", 1) == 3)
 		{
-			copy_file(music + "CityEscape.brstm", data + "Studiopolis2.brstm", copy_options::overwrite_existing);
+			copy_file(stages + "SPZ2/Scene1City.bin", datas + "SPZ2/Scene1.bin", copy_options::overwrite_existing);
 		}
 		else if (config->getInt("Studiopolis", "s2", 1) == 4)
 		{
-			copy_file(music + "RooftopRun.brstm", data + "Studiopolis2.brstm", copy_options::overwrite_existing);
+			copy_file(stages + "SPZ2/Scene1Rooftop.bin", datas + "SPZ2/Scene1.bin", copy_options::overwrite_existing);
 		}
 		else
 		{
-			remove((data + "Studiopolis2.brstm").c_str());
+			remove(datas + "SPZ2/Scene1.bin");
 		}
 
 		// Angel Island
 		if (config->getBool("Press Garden", "pg1", true))
 		{
-			copy_file(music + "PressGarden.brstm", data + "PulpSolstice1.brstm", copy_options::overwrite_existing);
+			copy_file(stages + "PSZ1/Scene1.bin", datas + "PSZ1/Scene1.bin", copy_options::overwrite_existing);
 		}
 		else
 		{
-			remove((data + "PressGarden1.brstm").c_str());
+			remove(datas + "PSZ1/Scene1.bin");
 		}
 		if (config->getBool("Press Garden", "pg2", true))
 		{
-			copy_file(music + "PressGarden.brstm", data + "PulpSolstice2.brstm", copy_options::overwrite_existing);
+			copy_file(stages + "PSZ2/Scene2.bin", datas + "PSZ2/Scene2.bin", copy_options::overwrite_existing);
 		}
 		else
 		{
-			remove((data + "PressGarden2.brstm").c_str());
+			remove(datas + "PSZ2/Scene2.bin");
 		}
 
 		// Titanic Monarch
 		if (config->getInt("Titanic Monarch", "tm1", 1) == 1)
 		{
-			copy_file(music + "TitanicMonarch.brstm", data + "TitanicMonarch1.brstm", copy_options::overwrite_existing);
+			copy_file(stages + "TMZ1/Scene1.bin", datas + "TMZ1/Scene1.bin", copy_options::overwrite_existing);
 		}
 		else if (config->getInt("Titanic Monarch", "tm1", 1) == 2)
 		{
-			copy_file(music + "SkySanctuary.brstm", data + "TitanicMonarch1.brstm", copy_options::overwrite_existing);
+			copy_file(stages + "TMZ1/Scene1Sky.bin", datas + "TMZ1/Scene1.bin", copy_options::overwrite_existing);
 		}
 		else
 		{
-			remove((data + "TitanicMonarch1.brstm").c_str());
+			remove(datas + "TMZ/Scene1.bin");
 		}
 		if (config->getInt("Titanic Monarch", "tm2", 1) == 1)
 		{
-			copy_file(music + "TitanicMonarch.brstm", data + "TitanicMonarch2.brstm", copy_options::overwrite_existing);
+			copy_file(stages + "TMZ2/Scene1.bin", datas + "TMZ2/Scene1.bin", copy_options::overwrite_existing);
 		}
 		else if (config->getInt("Titanic Monarch", "tm2", 1) == 2)
 		{
-			copy_file(music + "SkySanctuary.brstm", data + "TitanicMonarch2.brstm", copy_options::overwrite_existing);
+			copy_file(stages + "TMZ2/Scene1Sky.bin", datas + "TMZ2/Scene1.bin", copy_options::overwrite_existing);
 		}
 		else
 		{
-			remove((data + "TitanicMonarch2.brstm").c_str());
+			remove(datas + "TMZ2/Scene1.bin");
 		}
 
 		// Extra Songs
-		if (config->getBool("Extra", "ss1", false))
+		if (config->getInt("Extra", "ss1", 0) == 1)
 		{
-			copy_file(music + "SonicBoom.brstm", data + "StardustSpeedway1.brstm", copy_options::overwrite_existing);
+			copy_file(stages + "SSZ1/Scene1Boom.bin", datas + "SSZ1/Scene1.bin", copy_options::overwrite_existing);
+		}
+		else if (config->getInt("Extra", "ss1", 0) == 2)
+		{
+			copy_file(stages + "SSZ1/Scene1City.bin", datas + "SSZ1/Scene1.bin", copy_options::overwrite_existing);
 		}
 		else
 		{
-			remove((data + "StardustSpeedway1.brstm").c_str());
+			remove(datas + "SSZ1/Scene1.bin");
 		}
-		if (config->getBool("Extra", "ss2", false))
+		if (config->getInt("Extra", "ss2", 0) == 1)
 		{
-			copy_file(music + "SonicBoom.brstm", data + "StardustSpeedway2.brstm", copy_options::overwrite_existing);
+			copy_file(stages + "SSZ2/Scene1Boom.bin", datas + "SSZ2/Scene1.bin", copy_options::overwrite_existing);
+			copy_file(stages + "SSZ2/Scene2Boom.bin", datas + "SSZ2/Scene2.bin", copy_options::overwrite_existing);
+		}
+		else if (config->getInt("Extra", "ss2", 0) == 2)
+		{
+			copy_file(stages + "SSZ2/Scene1City.bin", datas + "SSZ2/Scene1.bin", copy_options::overwrite_existing);
+			copy_file(stages + "SSZ2/Scene2City.bin", datas + "SSZ2/Scene2.bin", copy_options::overwrite_existing);
 		}
 		else
 		{
-			remove((data + "StardustSpeedway2.brstm").c_str());
+			remove(datas + "SSZ2/Scene1.bin");
+			remove(datas + "SSZ2/Scene2.bin");
 		}
 
 		if (config->getBool("Extra", "ufo", false))
 		{
-			copy_file(music + "Sunshine.brstm", data + "UFOSpecial.brstm", copy_options::overwrite_existing);
+			copy_file(stages + "UFO1/Scene1.bin", datas + "UFO1/Scene1.bin", copy_options::overwrite_existing);
+			copy_file(stages + "UFO1/Scene2.bin", datas + "UFO1/Scene2.bin", copy_options::overwrite_existing);
+			copy_file(stages + "UFO2/Scene1.bin", datas + "UFO2/Scene1.bin", copy_options::overwrite_existing);
+			copy_file(stages + "UFO2/Scene2.bin", datas + "UFO2/Scene2.bin", copy_options::overwrite_existing);
+			copy_file(stages + "UFO3/Scene1.bin", datas + "UFO3/Scene1.bin", copy_options::overwrite_existing);
+			copy_file(stages + "UFO3/Scene2.bin", datas + "UFO3/Scene2.bin", copy_options::overwrite_existing);
+			copy_file(stages + "UFO4/Scene1.bin", datas + "UFO4/Scene1.bin", copy_options::overwrite_existing);
+			copy_file(stages + "UFO4/Scene2.bin", datas + "UFO4/Scene2.bin", copy_options::overwrite_existing);
+			copy_file(stages + "UFO5/Scene1.bin", datas + "UFO5/Scene1.bin", copy_options::overwrite_existing);
+			copy_file(stages + "UFO5/Scene2.bin", datas + "UFO5/Scene2.bin", copy_options::overwrite_existing);
+			copy_file(stages + "UFO6/Scene1.bin", datas + "UFO6/Scene1.bin", copy_options::overwrite_existing);
+			copy_file(stages + "UFO6/Scene2.bin", datas + "UFO6/Scene2.bin", copy_options::overwrite_existing);
+			copy_file(stages + "UFO7/Scene1.bin", datas + "UFO7/Scene1.bin", copy_options::overwrite_existing);
+			copy_file(stages + "UFO7/Scene2.bin", datas + "UFO7/Scene2.bin", copy_options::overwrite_existing);
 		}
 		else
 		{
-			remove((data + "UFOSpecial.brstm").c_str());
+			remove(datas + "UFO1/Scene1.bin");
+			remove(datas + "UFO1/Scene2.bin");
+			remove(datas + "UFO2/Scene1.bin");
+			remove(datas + "UFO2/Scene2.bin");
+			remove(datas + "UFO3/Scene1.bin");
+			remove(datas + "UFO3/Scene2.bin");
+			remove(datas + "UFO4/Scene1.bin");
+			remove(datas + "UFO4/Scene2.bin");
+			remove(datas + "UFO5/Scene1.bin");
+			remove(datas + "UFO5/Scene2.bin");
+			remove(datas + "UFO6/Scene1.bin");
+			remove(datas + "UFO6/Scene2.bin");
+			remove(datas + "UFO7/Scene1.bin");
+			remove(datas + "UFO7/Scene2.bin");
 		}
 
 		if (config->getBool("Extra", "boss", false))
 		{
-			copy_file(music + "Sonic1Boss.brstm", data + "BossEggman1.brstm", copy_options::overwrite_existing);
-			copy_file(music + "Sonic1Boss.brstm", data + "BossEggman2.brstm", copy_options::overwrite_existing);
-			copy_file(music + "Sonic1Boss.brstm", data + "BossFinal.brstm", copy_options::overwrite_existing);
-			copy_file(music + "Sonic1Boss.brstm", data + "BossHBH.brstm", copy_options::overwrite_existing);
-			copy_file(music + "Sonic1Boss.brstm", data + "BossMini.brstm", copy_options::overwrite_existing);
-			copy_file(music + "Sonic1Boss.brstm", data + "BossPuyo.brstm", copy_options::overwrite_existing);
-			copy_file(music + "Sonic1Boss.brstm", data + "EggReverie.brstm", copy_options::overwrite_existing);
-			copy_file(music + "Sonic1Boss.brstm", data + "EggReveriePinch.brstm", copy_options::overwrite_existing);
-			copy_file(music + "Sonic1Boss.brstm", data + "MetalSonic.brstm", copy_options::overwrite_existing);
+			copy_file(stages + "TMZ3/Scene1Boss.bin", datas + "TMZ3/Scene1.bin", copy_options::overwrite_existing);
 		}
 		else
 		{
-			remove((data + "BossEggman1.brstm").c_str());
-			remove((data + "BossEggman2.brstm").c_str());
-			remove((data + "BossFinal.brstm").c_str());
-			remove((data + "BossHBH.brstm").c_str());
-			remove((data + "BossMini.brstm").c_str());
-			remove((data + "BossPuyo.brstm").c_str());
-			remove((data + "EggReverie.brstm").c_str());
-			remove((data + "EggReveriePinch.brstm").c_str());
-			remove((data + "MetalSonic.brstm").c_str());
+			remove(datas + "TMZ3/Scene1.bin");
 		}
 
 		// Other Songs
 		if (config->getBool("Other", "title", true))
 		{
-			copy_file(music + "TitleScreen.ogg", data + "TitleScreen.ogg", copy_options::overwrite_existing);
+			copy_file(datam + "Title.ogg", datam + "TitleScreen.ogg", copy_options::overwrite_existing);
 		}
 		else
 		{
-			remove((data + "TitleScreen.ogg").c_str());
+			remove(datam + "TitleScreen.ogg");
 		}
 		if (config->getBool("Other", "plus", true))
 		{
-			copy_file(music + "Plus.wav", soundfx + "Plus.wav", copy_options::overwrite_existing);
+			copy_file(soundfx + "Empty.wav", soundfx + "Plus.wav", copy_options::overwrite_existing);
 		}
 		else
 		{
-			remove((soundfx + "Plus.wav").c_str());
+			remove(soundfx + "Plus.wav");
 		}
 
 		if (config->getBool("Other", "introhp", true))
 		{
-			copy_file(music + "IntroHP.ogg", data + "IntroHP.ogg", copy_options::overwrite_existing);
+			copy_file(datam + "Intro.ogg", datam + "IntroHP.ogg", copy_options::overwrite_existing);
 		}
 		else
 		{
-			remove((data + "IntroHP.ogg").c_str());
+			remove(datam + "IntroHP.ogg");
 		}
 		if (config->getBool("Other", "introtl", true))
 		{
-			copy_file(music + "IntroTee.ogg", data + "IntroTee.ogg", copy_options::overwrite_existing);
+			copy_file(datam + "Intro.ogg", datam + "IntroTee.ogg", copy_options::overwrite_existing);
 		}
 		else
 		{
-			remove((data + "IntroTee.ogg").c_str());
+			remove(datam + "IntroTee.ogg");
 		}
 	}
 	__declspec(dllexport) ModInfo ManiaModInfo = {ModLoaderVer, GameVer};

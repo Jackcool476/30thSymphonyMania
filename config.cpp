@@ -10,7 +10,6 @@ extern "C"
 		string datam = path + string("/Data/Music/");
 		string datas = path + string("/Data/Stages/");
 		string soundfx = path + string("/Data/SoundFX/Stage/");
-		string music = path + string("/Music/");
 		string stages = path + string("/Stages/");
 
 		// Green Hill
